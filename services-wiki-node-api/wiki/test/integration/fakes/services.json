@@ -1,0 +1,130 @@
+﻿[{
+    "_id": "211",
+    "name": "Conversas Test",
+    "routePrefix": "peoples/{idPeople}/conversations",
+	"httpVerbs": [{
+        "_id": "1"
+    },
+        {
+        "_id": "2"
+    },
+        {
+        "_id": "3"
+    },
+        {
+        "_id": "4"
+    },
+        {
+        "_id": "5"
+    }]
+},
+{
+    "_id": "212",
+    "name": "Chat Messages Test",
+    "routePrefix": "peoples/{idPeople}/conversations/{idConversation}/messages",
+    "httpVerbs": [{
+        "_id": "6"
+    },
+        {
+        "_id": "7"
+    },
+        {
+        "_id": "8"
+    }]
+},
+{
+    "_id": "213",
+    "name": "Communications Test",
+    "routePrefix": "peoples/{idPeople}/communications",
+    "httpVerbs": [{
+        "_id" : "10",
+        "verb" : "Get",
+        "route" : "{id}",
+        "service" : 3,
+        "parameters" : [
+                {
+                        "_id" : "1",
+                        "name" : "idPeople",
+                        "type" : "int"
+                },
+                {
+                        "_id" : "2",
+                        "name" : "id",
+                        "type" : "int"
+                }
+        ],
+        "returns" : [
+                {
+                        "_id" : "1",
+                        "code" : "200",
+                        "name" : "Ok",
+                        "type" : "success",
+                        "object" : "CommunicationModel"
+                },
+                {
+                        "_id" : "2",
+                        "code" : "400",
+                        "name" : "Bad Request",
+                        "type" : "fail",
+                        "message" : "Error, communication doesn't exist."
+                },
+                {
+                        "_id" : "3",
+                        "code" : "400",
+                        "name" : "Bad Request",
+                        "type" : "fail",
+                        "message" : "Error to find communications: ..."
+                }
+        ]
+	},
+	{
+        "_id" : "11",
+        "verb" : "Get",
+        "route" : "{id}",
+        "service" : 3,
+        "parameters" : [
+                {
+                        "_id" : "2",
+                        "name" : "id",
+                        "type" : "int"
+                }
+        ],
+        "returns" : [
+                {
+                        "_id" : "3",
+                        "code" : "400",
+                        "name" : "Bad Request",
+                        "type" : "fail",
+                        "message" : "Error to find communications: ..."
+                }
+        ]
+	},
+	{
+        "_id" : "12",
+        "verb" : "Get",
+        "route" : "{id}",
+        "service" : 3,
+        "parameters" : [
+			{
+                        "_id" : "2",
+                        "name" : "id",
+                        "type" : "int"
+            }
+        ],
+        "returns" : []
+	}]
+},
+{
+    "_id": 214,
+    "name": "Pessoas Test",
+    "routePrefix": "peoples",
+    "httpVerbs": [{
+        "_id": "11"
+    }]
+},
+{
+    "_id": 215,
+    "name": "Carros Test",
+    "routePrefix": "peoples",
+    "httpVerbs": []
+}]

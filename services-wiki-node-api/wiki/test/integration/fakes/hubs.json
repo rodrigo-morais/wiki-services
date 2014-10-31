@@ -1,0 +1,179 @@
+﻿[{
+		"_id": "88885",
+        "name": "Chat Messages Test",
+        "invokes": [{
+            "_id": 1,
+            "name": "sendMessage",
+            "parameters": [{
+                "name": "message",
+                "type": "ChatMessage"
+            },
+            {
+                "name": "group",
+                "type": "Group"
+            }],
+            "ons": [{
+                "name": "newMessage",
+                "type": "success",
+                "parameters": "ChatMessage, Group"
+            },
+            {
+                "name": "onError",
+                "type": "fail",
+                "parameters": "Error"
+            }]
+        },
+        {
+            "_id": 2,
+            "name": "joinConversation",
+            "parameters": [{
+                "name": "group",
+                "type": "Group"
+            },
+            {
+                "name": "people",
+                "type": "People"
+            }],
+            "ons": [{
+                "name": "joined",
+                "type": "success",
+                "parameters": "Group, People"
+            },
+            {
+                "name": "onError",
+                "type": "fail",
+                "parameters": "Error"
+            }]
+        },
+        {
+            "_id": 3,
+            "name": "createConversation",
+            "parameters": [{
+                "name": "group",
+                "type": "Group"
+            },
+            {
+                "name": "owner",
+                "type": "People"
+            },
+            {
+                "name": "guest",
+                "type": "People"
+            }],
+            "ons": [{
+                "name": "newConversation",
+                "type": "success",
+                "parameters": "Group, People, People"
+            },
+            {
+                "name": "onError",
+                "type": "fail",
+                "parameters": "Error"
+            }]
+        },
+        {
+            "_id": 4,
+            "name": "connectChat",
+            "ons": [{
+                "name": "onConnected",
+                "type": "success",
+                "parameters": "People"
+            },
+            {
+                "name": "onError",
+                "type": "fail",
+                "parameters": "Error"
+            }]
+        },
+        {
+            "_id": 5,
+            "name": "connectedInfo",
+            "parameters": [{
+                "name": "people",
+                "type": "People"
+            }],
+            "ons": [{
+                "name": "connectedInfo",
+                "type": "success",
+                "parameters": "People"
+            },
+            {
+                "name": "onError",
+                "type": "fail",
+                "parameters": "Error"
+            },
+            {
+                "name": "disconnectedInfo",
+                "type": "success",
+                "parameters": "People, Group"
+            },
+            {
+                "name": "onError",
+                "type": "fail",
+                "parameters": "Error"
+            }]
+        },
+        {
+            "_id": 6,
+            "name": "disconnectChat"
+        }]
+    },
+    {
+        "_id": "88883",
+		"name": "Communications Test",
+        "invokes": [{
+            "_id": 7,
+            "name": "sendCommunication",
+            "parameters": [{
+                "name": "toIds",
+                "type": "Array(String)"
+            }],
+            "ons": [{
+                "name": "receiveCommunication",
+                "type": "success",
+                "parameters": "People, Number"
+            },
+            {
+                "name": "onError",
+                "type": "fail",
+                "parameters": "Error"
+            }]
+        },
+        {
+            "_id": 8,
+            "name": "connectedCommunication",
+            "parameters": [{
+                "name": "people",
+                "type": "People"
+            }],
+            "ons": [{
+                "name": "onError",
+                "type": "fail",
+                "parameters": "Error"
+            }]
+        },
+        {
+            "_id": 9,
+            "name": "disconnectChat",
+            "ons": [{
+                "name": "disconnectedInfo",
+                "type": "success",
+                "parameters": "People, Group"
+            },
+            {
+                "name": "onError",
+                "type": "fail",
+                "parameters": "Error"
+            }]
+        }]
+    },
+	{
+        "_id": "88882",
+		"name": "Fake 1 Test",
+        "invokes": []
+    },
+	{
+        "_id": "88884",
+		"name": "Fake 2 Test",
+        "invokes": []
+    }]
