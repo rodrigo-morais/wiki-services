@@ -9,4 +9,11 @@ var menuSchema = new Schema({
     submenus: [SubMenu.schema]
 });
 
+menuSchema.set('toJSON', {
+    transform: function (doc, ret, options) {
+        ret.id = ret._id;
+        delete ret._id;
+    }
+});
+
 module.exports = mongoose.model("Menu", menuSchema);

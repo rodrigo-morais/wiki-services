@@ -12,16 +12,17 @@
                 
                 _.forEach(services, function (_service) {
                     var service = {
-                        _id: _service._id,
+                        id: _service.id,
                         name: _service.name,
                         routePrefix: _service.routePrefix,
                         httpVerbs: _service.httpVerbs
                     };
+
                     _services.push(service);
                 });
                 
                 _services = _.sortBy(_services, function (_service) {
-                    return _service._id;
+                    return _service.id;
                 });
                 
                 next(null, _services);
@@ -54,7 +55,7 @@
                 if (service) {
                     var _httpVerbs = _.map(service.httpVerbs, function (verb) {
                         return {
-                            _id: verb._id,
+                            id: verb.id,
                             verb: verb.verb,
                             route: verb.route,
                             parameters: verb.parameters,
@@ -79,10 +80,10 @@
             } else {
                 if (service) {
                     var _httpVerb = _.find(service.httpVerbs, function (httpVerb) {
-                        if (httpVerb === undefined || httpVerb._id === undefined) {
+                        if (httpVerb === undefined || httpVerb.id === undefined) {
                             return false;
                         }
-                        return httpVerb._id.toString() === id;
+                        return httpVerb.id.toString() === id;
                     });
                     if (_httpVerb) {
                         next(null, _httpVerb);

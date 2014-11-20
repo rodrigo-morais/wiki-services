@@ -11,7 +11,7 @@
                 var _hubs = [];
                 
                 _hubs = _.sortBy(hubs, function (_hub) {
-                    return _hub._id;
+                    return _hub.id;
                 });
                 
                 next(null, _hubs);
@@ -43,11 +43,11 @@
                 if (hub) {
                     var invokes = _.map(hub.invokes, function (invoke) {
                         return {
-                            _id: invoke._id,
+                            id: invoke.id,
                             name: invoke.name,
                             parameters: invoke.parameters,
                             ons: invoke.ons,
-                            hub: hub._id
+                            hub: hub.id
                         };
                     });
                     

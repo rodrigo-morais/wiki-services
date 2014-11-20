@@ -21,7 +21,7 @@
                     var _services = [];
                     
                     _menus.push({
-                        _id: "1",
+                        id: "1",
                         name: 'Serviços',
                         type: 'services',
                         submenus: []
@@ -29,7 +29,7 @@
                     
                     _.forEach(services, function (_service) {
                         var submenu = {
-                            _id: _service._id,
+                            id: _service.id,
                             name: _service.name
                         };
 
@@ -58,7 +58,7 @@
             } else {
                 if (models) {
                     var _menuModel = {
-                        _id: "2",
+                        id: "2",
                         name: 'Modelos',
                         type: 'models',
                         submenus: []
@@ -66,7 +66,7 @@
                     
                     _.forEach(models, function (_model) {
                         var submenu = {
-                            _id: _model._id,
+                            id: _model.id,
                             name: _model.name
                         };
                         
@@ -95,7 +95,7 @@
             } else {
                 if (hubs) {
                     _menus.push({
-                        _id: "3",
+                        id: "3",
                         name: 'Hubs',
                         type: 'hubs',
                         submenus: []
@@ -103,7 +103,7 @@
                     
                     _.forEach(hubs, function (_hub) {
                         var submenu = {
-                            _id: _hub._id,
+                            id: _hub.id,
                             name: _hub.name
                         };
                         
@@ -130,7 +130,7 @@
             } else {
                 if (models) {
                     var _menuModel = {
-                        _id: "4",
+                        id: "4",
                         name: 'Modelos',
                         type: 'models',
                         submenus: []
@@ -138,7 +138,7 @@
                     
                     _.forEach(models, function (_model) {
                         var submenu = {
-                            _id: _model._id,
+                            id: _model.id,
                             name: _model.name
                         };
                         
