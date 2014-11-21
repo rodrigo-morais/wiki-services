@@ -1,0 +1,12 @@
+﻿{{#if view.hasChilds }}
+	{{view 'Wiki.LinkNavHeaderView' target=view.target text=view.name}}
+	<ul class='list-unstyled collapse' {{bind-attr id='view.target'}} >
+        {{#each view.submenus}}
+          {{view 'Wiki.MenuItemView' model=this type_parent=view.uri}}
+        {{/each}}
+      </ul>
+{{else}}
+	<a {{bind-attr href=view.path}}>
+		<i class="fa fa-cog"></i> {{ view.name }}
+	</a>
+{{/if}}

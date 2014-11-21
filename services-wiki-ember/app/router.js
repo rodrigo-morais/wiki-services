@@ -6,6 +6,12 @@ var Router = Ember.Router.extend({
 });
 
 Router.map(function() {
+    this.resource("index", { path: "/" });
+    this.resource("menu", { path: "/menus" });
+});
+
+Router.reopen({
+    rootURL: '/'
 });
 
 export default Router;
