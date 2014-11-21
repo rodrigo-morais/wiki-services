@@ -1,3 +1,210 @@
-html, body {
-  margin: 20px;
+html, body
+{
+    height: 100%;
+    max-height: 100%;
+    overflow: hidden;
 }
+
+.container-fluid
+{
+    padding: 0;
+}
+
+.fill { 
+    min-height: 100%;
+    height: 100%;
+}
+
+.fill-header { 
+    min-height: 40px;
+    height: 6%;
+    margin-left: 0;
+    margin-right: 0;
+    background-color: #000000;
+    color: #ffffff;
+}
+
+.fill-body { 
+    position: relative;
+    min-height: 94%;
+    height: 94%;
+    max-height: 94%;
+}
+
+.main
+{
+    position: relative;
+    min-height: 100%;
+    height: 100%;
+    max-height: 100%;
+}
+
+.main-container {
+    width: 100%;
+    height: 100%;
+    min-height: 100%;
+    background: #ffffff;
+    display: block;
+}
+
+.sidebar
+{
+    height: 100%;
+    min-height: 100%;
+    background: #000000;
+    display: block;
+    overflow-x: hidden;
+    overflow-y: auto;
+    padding-top: 20px;
+}
+
+/*-- ---------------------------------------- Header ----------------------------------------------- --*/
+a#wiki
+{
+    margin-left: 2%;
+    font-size: 2em;
+    font-weight: bold;
+    font-family: 'Times New Roman';
+    text-decoration: none;
+    color: #ffffff;
+}
+
+.login
+{
+    float: right;
+    margin: 0.2% 2%;
+}
+/*-- ---------------------------------------- Header ----------------------------------------------- --*/
+
+/*-- ------------------------------------------ Menu ----------------------------------------------- --*/
+i {
+    font-size:16px;
+}
+
+.nav-header
+{
+    margin-left:10px;
+    padding:0 0 4px 6px;
+
+}
+
+.nav-header-link, .nav-header-link:hover, .list-unstyled > li > a {
+    color:#ffffff;
+    text-decoration: none;
+}
+
+.list-unstyled > li > a > i {
+    padding-right: 5px;
+}
+  
+.list-unstyled li > ul > li {
+   margin-left:8px;
+   padding:8px;
+}
+/*-- ------------------------------------------ Menu ----------------------------------------------- --*/
+
+.main-body
+{
+    position:relative;
+    width: 98%;
+    padding-top: 1%;
+    max-height: 100%;
+    height: 100%;
+}
+
+.main-body h2
+{
+    padding: 1% 0 1% 10%;
+}
+
+.message-table
+{
+    text-align:center;
+    font-size: 2em;
+    color: #ff0000;
+}
+
+/*-- ------------------------------------------ Service -------------------------------------------- --*/
+.service-body
+{
+    width: 80%;
+    margin: 0 10% 0 10%;
+    font-size: 1em;
+}
+
+.service-body span
+{
+    font-size: 1.3em;
+    font-weight: bold;
+}
+
+.service-body panel-body
+{
+    overflow-y: auto;
+}
+
+.service-body table tr
+{
+    cursor: pointer;
+}
+
+/*-- ------------------------------------------ Service -------------------------------------------- --*/
+
+/*-- ------------------------------------------ HttpVerb ------------------------------------------- --*/
+.httpVerb-body
+{
+    font-size: 1em;
+}
+
+.table-parameters
+{
+    margin-top: 2%;
+}
+
+.panel-body-scroll
+{
+    position: relative;
+    overflow-y:scroll;
+    overflow-x:hidden;
+    max-height: 370px;
+    height:370px;
+}
+
+.success
+{
+    background-color: #5cb85c;
+}
+
+.fail
+{
+    background-color: #FF6A6A;
+}
+/*-- ------------------------------------------ HttpVerb ------------------------------------------- --*/
+
+/*-- ---------------------------------------- Breadcrumb ------------------------------------------- --*/
+.liBreadcrumb:after
+{
+    padding: 0 5px;
+    color: #ccc;
+    content: "/\00a0";
+}
+/*-- ---------------------------------------- Breadcrumb ------------------------------------------- --*/
+
+/*-- ---------------------------------------- ServiceModel ----------------------------------------- --*/
+.serviceModel-body
+{
+    position: relative;
+    font-size: 1em;
+    height: 68%;
+    max-height: 68%;
+    overflow-y: auto;
+}
+
+.serviceModel-body pre
+{
+    height: 50%;
+    max-height: 50%;
+    overflow-y: auto;
+    white-space: pre;
+}
+/*-- ---------------------------------------- ServiceModel ----------------------------------------- --*/
