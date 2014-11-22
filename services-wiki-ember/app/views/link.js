@@ -1,19 +1,19 @@
 ﻿import Ember from 'ember';
 
-var LinkNavHeaderView = Ember.View.extend({
-    templateName: "linkNavHeader",
+var LinkView = Ember.View.extend({
+    templateName: "link",
     text: "",
     dataTarget: function () {
         return '#' + this.get('target');
     }.property('target'),
     click: function (event) {
         event.preventDefault();
-        /*
-        $(event.target)
+        
+        Ember.$()(event.target)
         .find("i")
         .toggleClass("glyphicon-chevron-right glyphicon-chevron-down");
-        */
+        
     }
 });
 
-export default LinkNavHeaderView;
+export default LinkView;
