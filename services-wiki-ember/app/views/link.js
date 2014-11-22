@@ -9,8 +9,7 @@ var LinkView = Ember.View.extend({
     click: function (event) {
         event.preventDefault();
         
-        Ember.$()(event.target)
-        .find("i")
+        Ember.$(event.target)
         .toggleClass("glyphicon-chevron-right glyphicon-chevron-down");
         
     }
