@@ -93,7 +93,11 @@ i {
 
 }
 
-.nav-header-link, .nav-header-link:hover, .list-unstyled > li > a {
+.nav-header-link,
+.nav-header-link:hover,
+.nav-header-link:active,
+.nav-header-link:visited,
+.list-unstyled > li > a {
     color:#ffffff;
     text-decoration: none;
 }
@@ -111,6 +115,19 @@ i {
 #services > li:last-of-type
 {
     margin-top: -9%;
+}
+
+.nav-header-link > h4,
+.nav-header-link > h4:active,
+.nav-header-link > h4:visited
+{
+    color: #FFFFFF;
+    text-decoration: none;
+}
+
+.nav-header-link > h4::before
+{
+    content: "";
 }
 /*-- ------------------------------------------ Menu ----------------------------------------------- --*/
 
