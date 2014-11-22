@@ -11,7 +11,7 @@
         </li>
         {{/if}}
         {{#each submenus}}
-          {{view 'Wiki.MenuItemView' model=this type_parent=controller.type}}
+          {{view 'item' model=this type_parent=controller.type}}
         {{/each}}
       </ul>
     {{/each}}

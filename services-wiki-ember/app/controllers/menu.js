@@ -1,7 +1,7 @@
 ﻿import Ember from 'ember';
 
 var MenuController = Ember.ArrayController.extend({
-    //itemController: 'menuItem'
+    itemController: 'item'
 });
 
 export default MenuController;

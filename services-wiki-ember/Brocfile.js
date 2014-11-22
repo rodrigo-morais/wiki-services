@@ -1,3 +1,4 @@
+/// <reference path="bower_components/bootstrap/dist/js/bootstrap.js" />
 /* global require, module */
 
 var EmberApp = require('ember-cli/lib/broccoli/ember-app');
@@ -21,6 +22,7 @@ app.import('bower_components/bootstrap/dist/css/bootstrap.css');
 app.import('bower_components/bootstrap/dist/css/bootstrap.css.map', {
     destDir: 'assets'
 });
+app.import('bower_components/bootstrap/dist/js/bootstrap.js');
 app.import('bower_components/bootstrap/fonts/glyphicons-halflings-regular.eot', {
     destDir: 'fonts'
 });

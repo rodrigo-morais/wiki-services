@@ -1,18 +1,15 @@
 ﻿import Ember from 'ember';
 import DS from 'ember-data';
-//import jQuery from './bower_components/jquery/dist/jquery';
 
 export default DS.Transform.extend({
     deserialize: function (serialized) {
-        var type = typeof serialized;
-        return (type === "array") ? serialized : [];
+        return (serialized instanceof Array) ? serialized : [];
     },
 
     serialize: function (deserialized) {
-        var type = typeof deserialized;
-        if (type === 'array') {
+        if (deserialized instanceof Array) {
             return deserialized;
-        } else if (type === 'string') {
+        } else if (deserialized instanceof String) {
             return deserialized.split(',').map(function (item) {
                 return Ember.$().trim(item);
             });
