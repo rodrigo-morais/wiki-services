@@ -96,6 +96,7 @@ i {
 .nav-header-link,
 .nav-header-link:hover,
 .nav-header-link:active,
+.nav-header-link:focus,
 .nav-header-link:visited,
 .list-unstyled > li > a {
     color:#ffffff;
@@ -119,6 +120,7 @@ i {
 
 .nav-header-link > h4,
 .nav-header-link > h4:active,
+.nav-header-link > h4:focus,
 .nav-header-link > h4:visited
 {
     color: #FFFFFF;
