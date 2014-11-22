@@ -5,6 +5,11 @@ html, body
     overflow: hidden;
 }
 
+body > div.ember-view
+{
+    height: 100vh;
+}
+
 .container-fluid
 {
     padding: 0;
@@ -100,6 +105,12 @@ i {
 .list-unstyled li > ul > li {
    margin-left:8px;
    padding:8px;
+}
+
+#hubs > li:last-of-type,
+#services > li:last-of-type
+{
+    margin-top: -9%;
 }
 /*-- ------------------------------------------ Menu ----------------------------------------------- --*/
 
