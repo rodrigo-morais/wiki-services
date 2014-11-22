@@ -5,10 +5,7 @@ var Router = Ember.Router.extend({
   location: config.locationType
 });
 
-Router.map(function() {
-    this.resource("index", { path: "/" });
-    this.resource("menu", { path: "/menus" });
-});
+Router.map(function() {});
 
 Router.reopen({
     rootURL: '/'
