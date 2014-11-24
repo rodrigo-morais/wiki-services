@@ -1,4 +1,5 @@
-﻿import { test, moduleFor } from 'ember-qunit';
+﻿import Ember from "ember";
+import { test, moduleFor } from 'ember-qunit';
  
 var route;
 
@@ -6,7 +7,7 @@ moduleFor('route:application', "Unit - ApplicationRoute", {
     setup: function () {
         var store = {
             findAll: function(type){
-                return new Em.RSVP.Promise(function(resolve){
+                return new Ember.RSVP.Promise(function(resolve){
                     resolve(['Services', 'Hubs']);
                 });
             }
