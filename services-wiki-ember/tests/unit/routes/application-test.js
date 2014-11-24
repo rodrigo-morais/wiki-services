@@ -1,20 +1,9 @@
-﻿import Ember from "ember";
-import { test, moduleFor } from 'ember-qunit';
- 
-var route;
+﻿import { test, moduleFor } from 'ember-qunit';
+import menuStore from '../../adapters/menu-fixture';
 
 moduleFor('route:application', "Unit - ApplicationRoute", {
     setup: function () {
-        var store = {
-            findAll: function(type){
-                return new Ember.RSVP.Promise(function(resolve){
-                    resolve(['Services', 'Hubs']);
-                });
-            }
-        };
-
-        this.subject().set('store', store);
-    
+        this.subject().set('store', menuStore.store);    
     },
     teardown: function () {}
 });
