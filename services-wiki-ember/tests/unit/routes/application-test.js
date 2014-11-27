@@ -26,12 +26,12 @@ test("return two menus", function(){
 
 test("verify if first menu is Services", function(){
     this.subject().model().then(function(result){
-        equal(result['menus'][0], 'Services');
+        equal(result['menus'][0].type, 'services');
     });
 });
 
 test("verify if last menu is Hubs", function(){
     this.subject().model().then(function(result){
-        equal(result['menus'][1], 'Hubs');
+        equal(result['menus'][1].type, 'hubs');
     });
 });
