@@ -30,8 +30,8 @@ var menuStore = (function(){
         },
         {
             "id":"3",
-            "name":"Hubs",
-            "type":"hubs",
+            "name":"Sockets",
+            "type":"sockets",
             "submenus":[
                 {"id":"545392031546bcbc01f6ad97","name":"Chat Messages"},
                 {"id":"545392031546bcbc01f6ad98","name":"Communication"},

@@ -30,8 +30,56 @@ test("verify if first menu is Services", function(){
     });
 });
 
-test("verify if last menu is Hubs", function(){
+test("verify if service menu has five submenus", function(){
     this.subject().model().then(function(result){
-        equal(result['menus'][1].type, 'hubs');
+        equal(result['menus'][0].submenus.length, 5);
+    });
+});
+
+test("verify if submenus are sorted by name and first submenu of service menu is 'Chat Messages'", function(){
+    this.subject().model().then(function(result){
+        equal(result['menus'][0].submenus[0].name, 'Chat Messages');
+    });
+});
+
+test("verify if last submenu of service menu is a model menu", function(){
+    this.subject().model().then(function(result){
+        equal(result['menus'][0].submenus[4].type, 'models');
+    });
+});
+
+test("verify if model submenu of service menu has others nine submenus", function(){
+    this.subject().model().then(function(result){
+        equal(result['menus'][0].submenus[4].submenus.length, 9);
+    });
+});
+
+test("verify if last menu is Sockets", function(){
+    this.subject().model().then(function(result){
+        equal(result['menus'][1].type, 'sockets');
+    });
+});
+
+test("verify if socket menu has three submenus", function(){
+    this.subject().model().then(function(result){
+        equal(result['menus'][1].submenus.length, 3);
+    });
+});
+
+test("verify if submenus are sorted by name and first submenu of socket menu is 'Chat Messages'", function(){
+    this.subject().model().then(function(result){
+        equal(result['menus'][1].submenus[0].name, 'Chat Messages');
+    });
+});
+
+test("verify if last submenu of socket menu is a model menu", function(){
+    this.subject().model().then(function(result){
+        equal(result['menus'][1].submenus[2].type, 'models');
+    });
+});
+
+test("verify if model submenu of socket menu has others four submenus", function(){
+    this.subject().model().then(function(result){
+        equal(result['menus'][1].submenus[2].submenus.length, 4);
     });
 });
