@@ -5,7 +5,9 @@ var Router = Ember.Router.extend({
   location: config.locationType
 });
 
-Router.map(function() {});
+Router.map(function() {
+    this.resource("services", { path: "/services/:service_id" });
+});
 
 Router.reopen({
     rootURL: '/'
