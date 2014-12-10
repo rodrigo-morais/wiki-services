@@ -3,8 +3,8 @@
 var HttpVerb = DS.Model.extend({
     verb: DS.attr('string'),
     route: DS.attr('string'),
-    /*parameters: DS.hasMany('parameter', { async: true }),
-    returns: DS.hasMany('return', { async: true }),*/
+    parameters: DS.hasMany('parameter'),
+    returns: DS.hasMany('return'),
     service: DS.belongsTo('service')
 });
 
