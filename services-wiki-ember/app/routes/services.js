@@ -8,12 +8,12 @@ var ServicesRoute = Ember.Route.extend({
         return {
             service_id: model.get('name')
         };
-    }/*,
+    },
     actions: {
         goToHttpVerb: function (httpVerb) {
             this.transitionTo('httpVerb', httpVerb);
         }
-    }*/
+    }
 });
 
 export default ServicesRoute;
