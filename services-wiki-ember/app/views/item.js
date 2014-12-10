@@ -23,11 +23,11 @@ var ItemView = Ember.View.extend({
     }.property('path'),
     hasTypeParent: function () {
         return this.get('type_parent') !== undefined && this.get('type_parent') !== null && this.get('type_parent') !== '';
-    }.property('path'),
+    }.property('hasTypeParent'),
     uri: function () {
         var model = this.get('model');
-        return this.get('type_parent') + '/' + model.type;
-    }.property(),
+        return this.get('type_parent') + model.type.charAt(0).toUpperCase() + model.type.slice(1).toLowerCase();
+    }.property('uri'),
     target: function () {
         var model = this.get('model');
         return this.get('type_parent') + '-' + model.type;
