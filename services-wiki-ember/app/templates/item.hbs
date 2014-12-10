@@ -6,7 +6,11 @@
         {{/each}}
       </ul>
 {{else}}
-	<a {{bind-attr href=view.path}}>
-		<i class="fa fa-cog"></i> {{ view.name }}
-	</a>
+	{{#if view.hasTypeParent}}
+		{{#link-to view.type_parent view.name}}<i class="fa fa-cog"></i>{{ view.name }}{{/link-to}}
+	{{else}}
+		<a {{bind-attr href=view.path}}>
+			<i class="fa fa-cog"></i> {{ view.name }}
+		</a>
+	{{/if}}
 {{/if}}

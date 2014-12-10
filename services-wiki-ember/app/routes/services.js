@@ -1,6 +1,6 @@
 ﻿import Ember from 'ember';
 
-var ServiceRoute = Ember.Route.extend({
+var ServicesRoute = Ember.Route.extend({
     model: function (params) {
         return this.store.find('service', params.service_id);
     },
@@ -16,4 +16,4 @@ var ServiceRoute = Ember.Route.extend({
     }*/
 });
 
-export default ServiceRoute;
+export default ServicesRoute;

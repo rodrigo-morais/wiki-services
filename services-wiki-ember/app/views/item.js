@@ -19,7 +19,10 @@ var ItemView = Ember.View.extend({
     }.property('submenus'),
     path: function () {
         var model = this.get('model');
-        return '#/' + this.get('type_parent') + '/' + model.name;
+        return '/' + this.get('type_parent') + '/' + model.name;
+    }.property('path'),
+    hasTypeParent: function () {
+        return this.get('type_parent') !== undefined && this.get('type_parent') !== null && this.get('type_parent') !== '';
     }.property('path'),
     uri: function () {
         var model = this.get('model');

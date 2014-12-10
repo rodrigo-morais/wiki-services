@@ -2,8 +2,8 @@
 
 var Service = DS.Model.extend({
     name: DS.attr('string'),
-    routePrefix: DS.attr('string'),
-    httpVerbs: DS.hasMany('httpVerb', { async: true })
+    routePrefix: DS.attr('string')/*,
+    httpVerbs: DS.hasMany('httpVerb', { async: true })*/
 });
 
 export default Service;
