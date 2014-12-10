@@ -1,5 +1,9 @@
 ﻿{{view 'breadcrumb' paths='Serviços' page=name model=this}}
 
+{{#if controllers.admin.logged}}
+  {{view 'taskbar'}}
+{{/if}}
+
 <h2>
   {{name}}
 </h2>
