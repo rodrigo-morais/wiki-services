@@ -70,10 +70,16 @@ var servicesStore = (function(){
     
     var _store = {
         find: function(type, params){
-            debugger;
             return new Ember.RSVP.Promise(function(resolve){
-                var object = JSON.parse('{"' + type + '": {}}');
-                object[type] = _fixture;
+                var object = JSON.parse('{"' + type + '": {}}'),
+                    fixtures = [], data;
+
+                fixtures.push(_fixture);
+                data = fixtures.filter(function(service){
+                    return service.name === params;
+                });
+
+                object[type] = data[0];
                 resolve(object);
             });
         }
