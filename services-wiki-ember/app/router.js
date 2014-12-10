@@ -6,7 +6,7 @@ var Router = Ember.Router.extend({
 });
 
 Router.map(function() {
-    this.resource("services", { path: "/services/:service_id" });
+    this.resource("service", { path: "/service/:service_id" });
 });
 
 Router.reopen({

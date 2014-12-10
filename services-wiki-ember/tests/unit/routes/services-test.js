@@ -1,13 +1,19 @@
 ﻿import { test, moduleFor } from 'ember-qunit';
-import servicesStore from '../../adapters/services-fixture';
+import serviceStore from '../../adapters/services-fixture';
 
-moduleFor('route:services', "Unit - ServicesRoute", {
+moduleFor('route:service', "Unit - ServiceRoute", {
     setup: function () {
-        this.subject().set('store', servicesStore.store);    
+        this.subject().set('store', serviceStore.store);    
     },
     teardown: function () {}
 });
 
-test("services route exists", function(){
+test("service route exists", function(){
     ok(this.subject());
+});
+
+test("return service data", function(){
+    this.subject().model('').then(function(result){
+        equal(Object.keys(result)[0], 'service');
+    });
 });
