@@ -13,7 +13,7 @@ test("service route exists", function(){
 });
 
 test("return service data", function(){
-    this.subject().model('').then(function(result){
+    this.subject().model({'service_id': 'Services'}).then(function(result){
         equal(Object.keys(result)[0], 'service');
     });
 });

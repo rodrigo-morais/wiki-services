@@ -69,7 +69,8 @@ var servicesStore = (function(){
     };
     
     var _store = {
-        find: function(type){
+        find: function(type, params){
+            debugger;
             return new Ember.RSVP.Promise(function(resolve){
                 var object = JSON.parse('{"' + type + '": {}}');
                 object[type] = _fixture;
