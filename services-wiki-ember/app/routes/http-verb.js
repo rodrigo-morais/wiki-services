@@ -1,9 +1,8 @@
 ﻿import Ember from 'ember';
-import config from "../config/environment";
 
 var HttpVerbRoute = Ember.Route.extend({
     model: function (params) {
-        return Ember.$.getJSON(config.APP.host + "/services/" + params.service_id + "/httpverbs/" + params.httpVerb_id);
+        return this.store.find('httpVerb', params.service_id + '-' + params.httpVerb_id);
     },
     serialize: function (model) {
         return {
