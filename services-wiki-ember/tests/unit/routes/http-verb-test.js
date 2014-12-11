@@ -17,3 +17,39 @@ test("return verb HTTP data", function(){
         equal(Object.keys(result)[0], 'httpVerb');
     });
 });
+
+test("verify http verb", function(){
+    this.subject().model({'service_id': 'Conversations', 'httpVerb_id': 1}).then(function(result){
+        equal(result['httpVerb'].verb, 'Get');
+    });
+});
+
+test("verify route of verb http", function(){
+    this.subject().model({'service_id': 'Conversations', 'httpVerb_id': 1}).then(function(result){
+        equal(result['httpVerb'].route, '{idConversation}');
+    });
+});
+
+test("verify returns exist in verb http", function(){
+    this.subject().model({'service_id': 'Conversations', 'httpVerb_id': 1}).then(function(result){
+        ok(result['httpVerb'].returns.length);
+    });
+});
+
+test("verify verb http contains four returns", function(){
+    this.subject().model({'service_id': 'Conversations', 'httpVerb_id': 1}).then(function(result){
+        equal(result['httpVerb'].returns.length, 4);
+    });
+});
+
+test("verify parameters exist in verb http", function(){
+    this.subject().model({'service_id': 'Conversations', 'httpVerb_id': 1}).then(function(result){
+        ok(result['httpVerb'].parameters.length);
+    });
+});
+
+test("verify verb http contains two parameters", function(){
+    this.subject().model({'service_id': 'Conversations', 'httpVerb_id': 1}).then(function(result){
+        equal(result['httpVerb'].parameters.length, 2);
+    });
+});

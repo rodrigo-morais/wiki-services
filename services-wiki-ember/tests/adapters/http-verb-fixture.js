@@ -53,10 +53,10 @@ var httpVerbStore = (function(){
             return new Ember.RSVP.Promise(function(resolve){
                 var object = JSON.parse('{"' + type + '": {}}'),
                     fixtures = [], data;
-
+                
                 fixtures.push(_fixture);
                 data = fixtures.filter(function(verb){
-                    return verb.id === params.split('-')[1];
+                    return verb.id.toString() === params.split('-')[1];
                 });
 
                 object[type] = data[0];
