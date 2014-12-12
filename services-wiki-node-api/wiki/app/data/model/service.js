@@ -3,7 +3,7 @@
     HttpVerb = require('./httpVerb');
 
 var serviceSchema = new Schema({
-    _id: Number,
+    _id: String,
     name: String,
     routePrefix: String,
     httpVerbs: [HttpVerb.schema]

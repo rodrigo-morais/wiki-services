@@ -1,6 +1,7 @@
 ﻿var Services = function () {
     var _ = require('underscore'),
-        Service = require('./model/service');
+        Service = require('./model/service'),
+        ObjectId = require('mongoose').Types.ObjectId;
 
     var _getServices = function (next) {
         Service.find({}, function (error, services) {
@@ -31,17 +32,22 @@
     };
 
     var _getService = function (name, next) {
-        Service.findOne({ name: { $regex : new RegExp(["^",name,"$"].join(""), "i") } }, function (error, service) {
+        var query = { "_id": name };
+        
+        if (isNaN(name)) {
+            query = { name: { $regex : new RegExp(["^",name,"$"].join(""), "i") } };
+        }
+        Service.findOne(query, function (error, service) {
             if (error) {
                 next(error, null);
             } else {
-                    
+                console.log(service);
                 if (service) {
                     next(null, service);
                 }
                 else {
                     next({ error: "Service '" + name + "' doesn't exist" }, null);
-                } 
+                }
             }
         });
     };
