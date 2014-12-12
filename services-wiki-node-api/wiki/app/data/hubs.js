@@ -9,9 +9,9 @@
             } else {
                 
                 var _hubs = [];
-                
+
                 _hubs = _.sortBy(hubs, function (_hub) {
-                    return _hub.id;
+                    return _hub._id;
                 });
                 
                 next(null, _hubs);

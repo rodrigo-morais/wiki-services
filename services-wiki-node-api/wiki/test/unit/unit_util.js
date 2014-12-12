@@ -8,17 +8,17 @@ before(function () {
     var filter = {};
     sinon.stub(services.model, 'find', function (filter, callback) {
         var results = [{
-            _id: 99993,
+            id: 99993,
             name: 'Service 3',
             httpVerbs: []
         },
                 {
-            _id: 99991,
+            id: 99991,
             name: 'Service 1',
             httpVerbs: [{ _id: 1 }, { _id: 2 }]
         },
                 {
-            _id: 99992,
+            id: 99992,
             name: 'Service 2',
             httpVerbs: []
         }];
@@ -29,7 +29,7 @@ before(function () {
     
     sinon.stub(services.model, 'findOne', function (name, callback) {
         var result = null;
-        
+
         if (name.name.$regex.toString().indexOf('Not Verbs') > -1) {
             result = {
                 _id: 99991,
@@ -40,7 +40,7 @@ before(function () {
             name.name.$regex.toString().indexOf('Verbs') > -1) {
             result = {
                 _id: 99991,
-                httpVerbs: [{ _id: 1 }, { _id: 2 }, { _id: 3 }]
+                httpVerbs: [{ id: 1 }, { id: 2 }, { id: 3 }]
             };
         }
         

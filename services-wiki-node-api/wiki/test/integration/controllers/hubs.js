@@ -54,7 +54,7 @@
                 
                 var result = JSON.parse(res.text);
                 
-                result._id.should.equal('88883');
+                result.id.should.equal('88883');
                 
                 done();
             });

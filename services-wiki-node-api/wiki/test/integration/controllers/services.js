@@ -53,7 +53,7 @@
                 
                 var result = JSON.parse(res.text);
                 
-                result._id.should.equal(211);
+                result.id.should.equal('211');
                 
                 done();
             });
@@ -130,7 +130,7 @@
                 
                 var result = JSON.parse(res.text);
                 
-                result._id.should.equal(4);
+                result.id.should.equal(4);
                 
                 done();
             });

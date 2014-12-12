@@ -41,7 +41,6 @@
             if (error) {
                 next(error, null);
             } else {
-                console.log(service);
                 if (service) {
                     next(null, service);
                 }
@@ -69,7 +68,7 @@
                             service: verb.service
                         };
                     });
-
+                    
                     next(null, _httpVerbs);
                 }
                 else {
@@ -91,6 +90,7 @@
                         }
                         return httpVerb.id.toString() === id;
                     });
+
                     if (_httpVerb) {
                         next(null, _httpVerb);
                     }

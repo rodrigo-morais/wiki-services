@@ -14,14 +14,14 @@
 
         it("should return in first position the service with id 211", function (done) {
             services.getServices(function (error, services) {
-                services[0]._id.should.equal(211);
+                services[0].id.should.equal('211');
                 done();
             });
         });
 
         it("should return in last position the service with id 215", function (done) {
             services.getServices(function (error, services) {
-                services[4]._id.should.equal(215);
+                services[4].id.should.equal('215');
                 done();
             });
         });
@@ -39,7 +39,7 @@
         
         it("by name 'Communications Test' should return the same with id 213", function (done) {
             services.getService('Communications Test', function (error, service) {
-                service._id.should.have.equal(213);
+                service.id.should.have.equal('213');
                 done();
             });
         });
@@ -89,7 +89,7 @@
         
         it("of the service by name 'Communications Test' and verb by id 10 should return a verb with id 10", function (done) {
             services.getHttpVerb('Communications Test', '10', function (error, httpVerb) {
-                httpVerb._id.should.equal(10);
+                httpVerb.id.should.equal('10');
                 done();
             });
         });

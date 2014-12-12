@@ -15,14 +15,14 @@
 
         it("verify if first service is in correct order", function (done) {
             services.getServices(function (error, services) {
-                services[0]._id.should.equal(99991);
+                services[0].id.should.equal(99991);
                 done();
             });
         });
         
         it("verify if last service is in correct order", function (done) {
             services.getServices(function (error, services) {
-                services[2]._id.should.equal(99993);
+                services[2].id.should.equal(99993);
                 done();
             });
         });
@@ -90,7 +90,7 @@
         
         it("find verb HTTP for service by name and id", function (done) {
             services.getHttpVerb('Verbs', '3', function (error, httpVerb) {
-                httpVerb._id.should.equal(3);
+                httpVerb.id.should.equal(3);
                 done();
             });
         });
