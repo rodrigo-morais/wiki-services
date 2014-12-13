@@ -30,14 +30,26 @@ before(function () {
     sinon.stub(services.model, 'findOne', function (name, callback) {
         var result = null;
 
-        if (name.name.$regex.toString().indexOf('Not Verbs') > -1) {
+        if (isFinite(name._id) && name._id === 99991) {
+            result = {
+                _id: 99991,
+                httpVerbs: [{ id: 1 }, { id: 2 }, { id: 3 }]
+            };
+        }
+        else if (isFinite(name._id) && name._id === 99992) {
+            result = {
+                _id: 99992,
+                httpVerbs: []
+            };
+        }
+        else if (name.name !== undefined && name.name.$regex.toString().indexOf('Not Verbs') > -1) {
             result = {
                 _id: 99991,
                 httpVerbs: []
             };
         }
-        else if (name.name.$regex.toString().indexOf('Test') > -1 ||
-            name.name.$regex.toString().indexOf('Verbs') > -1) {
+        else if ((name.name !== undefined) && (name.name.$regex.toString().indexOf('Test') > -1 ||
+            name.name.$regex.toString().indexOf('Verbs') > -1)) {
             result = {
                 _id: 99991,
                 httpVerbs: [{ id: 1 }, { id: 2 }, { id: 3 }]
