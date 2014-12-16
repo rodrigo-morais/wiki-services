@@ -213,9 +213,8 @@ var hubsStore = (function(){
         find: function(type, params){
             return new Ember.RSVP.Promise(function(resolve){
                 var object = JSON.parse('{"' + type + '": {}}'),
-                    fixtures = [], data;
+                    fixtures = _fixture, data;
 
-                fixtures.push(_fixture);
                 data = fixtures.filter(function(hub){
                     return hub.name === params;
                 });
