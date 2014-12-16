@@ -42,6 +42,21 @@
                 }
             });
         });
+		
+		app.get("/hubs/:name/invokes/:id", function (req, res) {
+            
+            var hub = req.params.name;
+            var id = req.params.id;
+
+            repo.getInvoke(hub, id, function (err, data) {
+                if (err) {
+                    res.send(400, err);
+                } else {
+                    res.set("Content-Type", "application/json");
+                    res.send(200, data);
+                }
+            });
+        });
 
     };
 })(module.exports);

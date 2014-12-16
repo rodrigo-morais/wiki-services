@@ -59,12 +59,40 @@
             }
         });
     };
+	
+	var _getInvoke = function (name, id, next) {
+        Hub.findOne({ name: { $regex : new RegExp(["^",name,"$"].join(""), "i") } }, function (error, hub) {
+            if (error) {
+                next(error, null);
+            } else {
+                if (hub) {
+                    var _invoke = _.find(hub.invokes, function (invoke) {
+                        if (invoke === undefined || invoke.id === undefined) {
+                            return false;
+                        }
+                        return invoke.id.toString() === id;
+                    });
+
+                    if (_invoke) {
+                        next(null, _invoke);
+                    }
+                    else {
+                        next({ error: "Hub '" + name + "' doesn't have invoke '" + id + "'" }, null);
+                    }
+                }
+                else {
+                    next({ error: "Hub '" + name + "' doesn't exist" }, null);
+                }
+            }
+        });
+    };
 
     return {
         model : Hub,
         getHubs : _getHubs,
         getHub : _getHub,
-        getInvokes : _getInvokes
+        getInvokes : _getInvokes,
+        getInvoke : _getInvoke
     };
 }();
 
