@@ -8,6 +8,11 @@ var HubsRoute = Ember.Route.extend({
         return {
             hub_id: model.get('name')
         };
+    },
+    actions: {
+        goToInvoke: function (invoke) {
+            this.transitionTo('invoke', invoke);
+        }
     }
 });
 
