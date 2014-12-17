@@ -7,3 +7,37 @@
 <h2>
   {{name}}
 </h2>
+
+<div class='service-body panel panel-default'>
+  <div  class='panel-heading'>
+    <span>Rota:</span>
+    <em>{{routePrefix}}</em>
+  </div>
+  <div class='panel-body'>
+    <table class='table table-striped table-condensed table-hover'>
+      <thead>
+        <tr>
+          <th>
+            Invoke
+          </th>
+        </tr>
+        <thead>
+          <tbody>
+            {{#each invokes}}
+              <tr {{ action 'goToInvoke' this }}>
+                <td>
+                  {{name}}
+                </td>
+              </tr>
+            {{else}}
+              <tr>
+                <td colspan='2' class='message-table'>
+                  Não existem invokes cadastrados
+                </td>
+              </tr>
+            {{/each}}
+          </tbody>
+          <tfooter></tfooter>
+        </table>
+  </div>
+</div>
