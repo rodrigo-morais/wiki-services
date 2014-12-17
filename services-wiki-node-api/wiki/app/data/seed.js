@@ -663,19 +663,23 @@
             _id: 1,
             name: 'sendMessage',
             parameters: [{
+                _id: '1',
                 name: 'message',
                 type: 'ChatMessage'
             },
             {
+                _id: '2',
                 name: 'group',
                 type: 'Group'
             }],
             ons: [{
+                _id: '1',
                 name: 'newMessage',
                 type: 'success',
                 parameters: 'ChatMessage, Group'
             },
             {
+                _id: '2',
                 name: 'onError',
                 type: 'fail',
                 parameters: 'Error'
@@ -685,19 +689,23 @@
             _id: 2,
             name: 'joinConversation',
             parameters: [{
+                _id: '3',
                 name: 'group',
                 type: 'Group'
             },
             {
+                _id: '4',
                 name: 'people',
                 type: 'People'
             }],
             ons: [{
+                _id: '3',
                 name: 'joined',
                 type: 'success',
                 parameters: 'Group, People'
             },
             {
+                _id: '4',
                 name: 'onError',
                 type: 'fail',
                 parameters: 'Error'
@@ -707,23 +715,28 @@
             _id: 3,
             name: 'createConversation',
             parameters: [{
+                _id: '5',
                 name: 'group',
                 type: 'Group'
             },
             {
+                _id: '6',
                 name: 'owner',
                 type: 'People'
             },
             {
+                _id: '7',
                 name: 'guest',
                 type: 'People'
             }],
             ons: [{
+                _id: '5',
                 name: 'newConversation',
                 type: 'success',
                 parameters: 'Group, People, People'
             },
             {
+                _id: '6',
                 name: 'onError',
                 type: 'fail',
                 parameters: 'Error'
@@ -733,11 +746,13 @@
             _id: 4,
             name: 'connectChat',
             ons: [{
+                _id: '7',
                 name: 'onConnected',
                 type: 'success',
                 parameters: 'People'
             },
             {
+                _id: '8',
                 name: 'onError',
                 type: 'fail',
                 parameters: 'Error'
@@ -747,25 +762,30 @@
             _id: 5,
             name: 'connectedInfo',
             parameters: [{
+                _id: '8',
                 name: 'people',
                 type: 'People'
             }],
             ons: [{
+                _id: '9',
                 name: 'connectedInfo',
                 type: 'success',
                 parameters: 'People'
             },
             {
+                _id: '10',
                 name: 'onError',
                 type: 'fail',
                 parameters: 'Error'
             },
             {
+                _id: '11',
                 name: 'disconnectedInfo',
                 type: 'success',
                 parameters: 'People, Group'
             },
             {
+                _id: '12',
                 name: 'onError',
                 type: 'fail',
                 parameters: 'Error'
@@ -782,15 +802,18 @@
             _id: 7,
             name: 'sendCommunication',
             parameters: [{
+                _id: '9',
                 name: 'toIds',
                 type: 'Array(String)'
             }],
             ons: [{
+                _id: '13',
                 name: 'receiveCommunication',
                 type: 'success',
                 parameters: 'People, Number'
             },
             {
+                _id: '14',
                 name: 'onError',
                 type: 'fail',
                 parameters: 'Error'
@@ -800,10 +823,12 @@
             _id: 8,
             name: 'connectedCommunication',
             parameters: [{
+                _id: '10',
                 name: 'people',
                 type: 'People'
             }],
             ons: [{
+                _id: '15',
                 name: 'onError',
                 type: 'fail',
                 parameters: 'Error'
@@ -813,11 +838,13 @@
             _id: 9,
             name: 'disconnectChat',
             ons: [{
+                _id: '16',
                 name: 'disconnectedInfo',
                 type: 'success',
                 parameters: 'People, Group'
             },
             {
+                _id: '17',
                 name: 'onError',
                 type: 'fail',
                 parameters: 'Error'
