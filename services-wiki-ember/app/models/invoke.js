@@ -2,8 +2,8 @@
 
 var Invoke = DS.Model.extend({
     name: DS.attr('string'),
-    //parameters: DS.hasMany('invokeParameter'),
-    //ons: DS.hasMany('on'),
+    parameters: DS.hasMany('invoke-parameter'),
+    ons: DS.hasMany('on'),
     hub: DS.belongsTo('hub', { async: true })
 });
 

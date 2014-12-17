@@ -2,8 +2,8 @@
 
 var InvokeSerializer = DS.RESTSerializer.extend(DS.EmbeddedRecordsMixin, {
     attrs: {
-        //parameters: { embedded: 'always' },
-        //ons: { embedded: 'always' },
+        parameters: { embedded: 'always' },
+        ons: { embedded: 'always' },
         hub: { serialize: 'ids' }
     },
     extractSingle: function (store, type, payload, id) {
