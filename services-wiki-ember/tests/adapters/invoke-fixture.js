@@ -2,6 +2,26 @@
 
 var invokeStore = (function(){
     var _fixture = {
+        "name": "sendCommunication",
+        "ons": [
+          {
+              "name": "receiveCommunication",
+              "type": "success",
+              "parameters": "People, Number"
+          },
+          {
+              "name": "onError",
+              "type": "fail",
+              "parameters": "Error"
+          }
+        ],
+        "parameters": [
+          {
+              "name": "toIds",
+              "type": "Array(String)"
+          }
+        ],
+        "id": 7
     };
     
     var _store = {
