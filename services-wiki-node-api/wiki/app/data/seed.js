@@ -658,10 +658,12 @@
     }];
 
     seed.initialHubs = [{
+        _id: '1',
         name: 'Chat Messages',
         invokes: [{
             _id: 1,
             name: 'sendMessage',
+            hub: '1',
             parameters: [{
                 _id: '1',
                 name: 'message',
@@ -688,6 +690,7 @@
         {
             _id: 2,
             name: 'joinConversation',
+            hub: '1',
             parameters: [{
                 _id: '3',
                 name: 'group',
@@ -714,6 +717,7 @@
         {
             _id: 3,
             name: 'createConversation',
+            hub: '1',
             parameters: [{
                 _id: '5',
                 name: 'group',
@@ -745,6 +749,7 @@
         {
             _id: 4,
             name: 'connectChat',
+            hub: '1',
             ons: [{
                 _id: '7',
                 name: 'onConnected',
@@ -761,6 +766,7 @@
         {
             _id: 5,
             name: 'connectedInfo',
+            hub: '1',
             parameters: [{
                 _id: '8',
                 name: 'people',
@@ -797,10 +803,12 @@
         }]
     },
     {
+        _id: '2',
         name: 'Communication',
         invokes: [{
             _id: 7,
             name: 'sendCommunication',
+            hub: '2',
             parameters: [{
                 _id: '9',
                 name: 'toIds',
@@ -822,6 +830,7 @@
         {
             _id: 8,
             name: 'connectedCommunication',
+            hub: '2',
             parameters: [{
                 _id: '10',
                 name: 'people',
@@ -837,6 +846,7 @@
         {
             _id: 9,
             name: 'disconnectChat',
+            hub: '2',
             ons: [{
                 _id: '16',
                 name: 'disconnectedInfo',

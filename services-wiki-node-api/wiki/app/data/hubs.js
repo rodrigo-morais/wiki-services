@@ -20,7 +20,12 @@
     };
     
     var _getHub = function (name, next) {
-        Hub.findOne({ name: { $regex : new RegExp(["^",name,"$"].join(""), "i") } }, function (err, hub) {
+        var query = { "_id": name };
+        
+        if (isNaN(name)) {
+            query = { name: { $regex : new RegExp(["^",name,"$"].join(""), "i") } };
+        }
+        Hub.findOne(query, function (err, hub) {
             if (err) {
                 next(err, null);
             } else {
