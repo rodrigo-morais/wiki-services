@@ -10,8 +10,10 @@ var getPathPart = function(model, newPaths){
                 resolve(model.get(newPaths));
             }
             else{
-                model.model._data.service.store.find('service', 1).then(function(service){
-                    resolve(service.get('name'));
+                var modelData = newPaths.split('.')[0],
+                    attrData = newPaths.split('.')[1];
+                model.model._data[modelData].store.find(modelData, model.model._data[modelData]['id']).then(function(element){
+                    resolve(element.get(attrData));
                 });
             }
         }
