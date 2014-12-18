@@ -20,7 +20,6 @@ test("return invoke data", function(){
 
 test("verify invoke", function(){
     this.subject().model({'hub_id': 'Communication', 'invoke_id': 7}).then(function(result){
-        console.log(result);
         equal(result['invoke'].name, 'sendCommunication');
     });
 });
