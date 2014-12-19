@@ -1,1 +1,58 @@
-﻿{{ name }}
+﻿{{view 'breadcrumb' paths='Serviço,Modelo' page=name model=this}}
+
+{{#if controllers.admin.logged}}
+  {{view 'taskBarView'}}
+{{/if}}
+
+<h2>
+  {{name}}
+</h2>
+
+<div class='row serviceModel-body scrollable'>
+	<div class='panel panel-default col-md-10 col-md-offset-1'>
+		<div  class='panel-heading'>
+			<span>Propriedades:</span>
+		</div>
+		<div class='panel-body'>
+			<table class='table table-striped table-condensed table-hover'>
+				<thead>
+					<tr>
+						<th>
+							Nome
+						</th>
+						<th>
+							Tipo
+						</th>
+					</tr>
+				<thead>
+				<tbody>
+					{{#each properties}}
+						<tr>
+							<td>
+								{{name}}
+							</td>
+							<td>
+								{{type}}
+							</td>
+						</tr>
+					{{else}}
+						<tr>
+							<td colspan='2' class='message-table'>
+								Não existem propriedades cadastradas
+							</td>
+						</tr>
+					{{/each}}
+				</tbody>
+				<tfooter></tfooter>
+			</table>
+		</div>
+	</div>
+	<div class='panel panel-default col-md-10 col-md-offset-1'>
+		<div  class='panel-heading'>
+			<span>JSON:</span>
+		</div>
+		<div class='panel-body'>
+			
+		</div>
+	</div>
+</div>
