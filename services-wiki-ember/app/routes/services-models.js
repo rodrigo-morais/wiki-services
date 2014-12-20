@@ -2,7 +2,7 @@
 
 var ServicesModelsRoute = Ember.Route.extend({
     model: function (params) {
-        return this.store.find('model', params.model_id);
+        return this.store.find('model', 'services-' + params.model_id);
     },
     serialize: function (model) {
         return {

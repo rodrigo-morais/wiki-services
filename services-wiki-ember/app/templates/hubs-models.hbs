@@ -1,7 +1,7 @@
-﻿{{view 'breadcrumb' paths='Serviço,Modelo' page=name model=this}}
+﻿{{view 'breadcrumb' paths='Hub,Modelo' page=name model=this}}
 
 {{#if controllers.admin.logged}}
-  {{view 'taskbar'}}
+  {{view 'task-bar'}}
 {{/if}}
 
 <h2>
@@ -45,14 +45,6 @@
 				</tbody>
 				<tfooter></tfooter>
 			</table>
-		</div>
-	</div>
-	<div class='panel panel-default col-md-10 col-md-offset-1'>
-		<div  class='panel-heading'>
-			<span>JSON:</span>
-		</div>
-		<div class='panel-body'>
-			{{view 'json-pretty' jsonObj=json}}
 		</div>
 	</div>
 </div>
