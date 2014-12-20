@@ -41,3 +41,16 @@ test("verify if exist two properties in serviceModel", function(){
         equal(result['model'].properties.length, 2);
     });
 });
+
+test("verify if serviceModel contain json property", function(){
+    this.subject().model({'model_id': 'ActionModel'}).then(function(result){
+        ok(result['model'].json.length > 0);
+    });
+});
+
+test("verify if serviceModel contain json property as object", function(){
+    this.subject().model({'model_id': 'ActionModel'}).then(function(result){
+        var jsonObj = JSON.parse(result['model'].json);
+        equal(typeof jsonObj, 'object');
+    });
+});
