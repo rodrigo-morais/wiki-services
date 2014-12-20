@@ -3,6 +3,7 @@
         Schema = require('mongoose').Schema;
 
     var propertySchema = new Schema({
+        _id: Number,
         name: String,
         type: String
     });
