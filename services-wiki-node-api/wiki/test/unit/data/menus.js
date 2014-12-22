@@ -34,23 +34,23 @@
             });
         });
 
-        it("should return two hubs in tree", function (done) {
+        it("should return two sockets in tree", function (done) {
             menus.getMenus(function (error, menus) {
                 menus[1].submenus.should.have.length(3);
                 done();
             });
         });
 
-        it("should return hubs orderned in tree of menus where first menus is 'Hub 1'", function (done) {
+        it("should return sockets orderned in tree of menus where first menus is 'First Socket'", function (done) {
             menus.getMenus(function (error, menus) {
-                menus[1].submenus[0].name.should.equal('Hub 1');
+                menus[1].submenus[0].name.should.equal('First Socket');
                 done();
             });
         });
 
-        it("should return hubs orderned in tree of menus where last menus is 'Hub 3'", function (done) {
+        it("should return sockets orderned in tree of menus where last menus is 'Second Socket'", function (done) {
             menus.getMenus(function (error, menus) {
-                menus[1].submenus[1].name.should.equal('Hub 3');
+                menus[1].submenus[1].name.should.equal('Second Socket');
                 done();
             });
         });
@@ -83,28 +83,28 @@
             });
         });
 
-        it("should return hubs models in tree of menus", function (done) {
+        it("should return sockets models in tree of menus", function (done) {
             menus.getMenus(function (error, menus) {
                 menus[1].submenus[2].type.should.equal('models');
                 done();
             });
         });
 
-        it("should return four hubs models in tree", function (done) {
+        it("should return four sockets models in tree", function (done) {
             menus.getMenus(function (error, menus) {
                 menus[1].submenus[2].submenus.should.have.length(4);
                 done();
             });
         });
 
-        it("should return hubs models orderned in tree of menus where first menus is 'A model'", function (done) {
+        it("should return sockets models orderned in tree of menus where first menus is 'A model'", function (done) {
             menus.getMenus(function (error, menus) {
                 menus[1].submenus[2].submenus[0].name.should.equal('A model');
                 done();
             });
         });
 
-        it("should return hubs models orderned in tree of menus where last menus is 'Z model'", function (done) {
+        it("should return sockets models orderned in tree of menus where last menus is 'Z model'", function (done) {
             menus.getMenus(function (error, menus) {
                 menus[1].submenus[2].submenus[3].name.should.equal('Z model');
                 done();

@@ -1,6 +1,6 @@
 ﻿var mongoose = require('mongoose'),
         Schema = require('mongoose').Schema,
-        Property = require('./property');
+        Property = require('./Property');
 
 var modelSchema = new Schema({
     name: String,

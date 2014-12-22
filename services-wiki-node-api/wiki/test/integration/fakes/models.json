@@ -286,7 +286,7 @@
     },
     {
         "name": "ChatMessage Test",
-        "type": "hub",
+        "type": "socket",
         "properties": [{
             "name": "User",
             "type": "People"
@@ -306,7 +306,7 @@
     },
     {
         "name": "Error Test",
-        "type": "hub",
+        "type": "socket",
         "properties": [{
             "name": "Hub",
             "type": "String"
@@ -322,7 +322,7 @@
     },
     {
         "name": "Group Test",
-        "type": "hub",
+        "type": "socket",
         "properties": [{
             "name": "name",
             "type": "String"
@@ -338,7 +338,7 @@
     },
     {
         "name": "People Test",
-        "type": "hub",
+        "type": "socket",
         "properties": [{
             "name": "Id",
             "type": "String"

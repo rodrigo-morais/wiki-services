@@ -1,5 +1,5 @@
 ﻿var services = require('../../app/data/services'),
-    hubs = require('../../app/data/hubs'),
+    sockets = require('../../app/data/sockets'),
     models = require('../../app/data/models'),
     should = require('should'),
     sinon = require('sinon');
@@ -59,34 +59,34 @@ before(function () {
         callback(null, result);
     });
 
-    sinon.stub(hubs.model, 'find', function (filter, callback) {
+    sinon.stub(sockets.model, 'find', function (filter, blank, sort, callback) {
         var results = [{
-            _id: 88882,
-            name: 'Hub 3',
-            invokes: [{ _id: 1 }, { _id: 2 }]
-        },
-        {
             _id: 88881,
-            name: 'Hub 1',
-            invokes: []
+            name: 'First Socket',
+            messages: []
+        },
+		{
+            _id: 88882,
+            name: 'Second Socket',
+            messages: [{ _id: 1 }, { _id: 2 }]
         }];
         
         callback(null, results);
     });
 
-    sinon.stub(hubs.model, 'findOne', function (name, callback) {
+    sinon.stub(sockets.model, 'findOne', function (name, callback) {
         var result = null;
         
-        if (name.name.$regex.toString().indexOf('Hub with Invokes Test') > -1) {
+        if (name.name.$regex.toString().indexOf('Socket with Messages Test') > -1) {
             result = {
                 _id: 99995,
-                invokes: [{ _id: 1, }, {_id: 2}]
+                messages: [{ _id: 1, }, {_id: 2}]
             };
         }
-        else if (name.name.$regex.toString().indexOf('Hub Test') > -1) {
+        else if (name.name.$regex.toString().indexOf('Socket Test') > -1) {
             result = {
                 _id: 99995,
-                invokes: []
+                messages: []
             };
         }
         else {
@@ -114,22 +114,22 @@ before(function () {
         else {
             results = [{
                 name: 'C model',
-                type: 'hub',
+                type: 'socket',
                 properties: [{ _id: 1 }, { _id: 2 }]
             },
             {
                 name: 'A model',
-                type: 'hub',
+                type: 'socket',
                 properties: []
             },
             {
                 name: 'Z model',
-                type: 'hub',
+                type: 'socket',
                 properties: []
             },
             {
                 name: 'B model',
-                type: 'hub',
+                type: 'socket',
                 properties: []
             }];
         }
@@ -150,7 +150,7 @@ before(function () {
         else if (name.name.$regex.toString().indexOf('B model') > -1) {
             result = {
                 name: 'B model',
-                type: 'hub',
+                type: 'socket',
                 properties: []
             };
         }

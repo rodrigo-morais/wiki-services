@@ -34,15 +34,15 @@
             });
         });
         
-        it("by hubs should return status code 200", function (done) {
+        it("by sockets should return status code 200", function (done) {
             request(app)
-            .get('/hubs/models')
+            .get('/sockets/models')
             .expect(200, done);
         });
 
-        it("by hubs should return four models", function (done) {
+        it("by sockets should return four models", function (done) {
             request(app)
-            .get('/hubs/models')
+            .get('/sockets/models')
             .expect(200)
             .end(function (err, res) {
                 if (err) return done(err);
@@ -88,17 +88,17 @@
 
     });
 
-    describe("get models of hub by name", function () {
+    describe("get models of socket by name", function () {
 
         it("'ChatMessage Test' should return status code 200", function (done) {
             request(app)
-            .get('/hubs/models/ChatMessage Test')
+            .get('/sockets/models/ChatMessage Test')
             .expect(200, done);
         });
 
         it("'ChatMessage Test' should return the same", function (done) {
             request(app)
-            .get('/hubs/models/ChatMessage Test')
+            .get('/sockets/models/ChatMessage Test')
             .expect(200)
             .end(function (err, res) {
                 if (err) return done(err);
@@ -113,7 +113,7 @@
 
         it("'Incorrect Test' should return status code 400", function (done) {
             request(app)
-            .get('/hubs/models/Incorrect Test')
+            .get('/sockets/models/Incorrect Test')
             .expect(400, done);
         });
 

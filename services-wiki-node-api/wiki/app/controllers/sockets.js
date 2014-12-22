@@ -1,11 +1,11 @@
-﻿(function (hubs) {
+﻿(function (sockets) {
     
-    var repo = require("../data/hubs");
+    var repo = require("../data/sockets");
 
-    hubs.init = function (app) {
+    sockets.init = function (app) {
         
-        app.get("/hubs", function (req, res) {
-            repo.getHubs(function (err, data) {
+        app.get("/sockets", function (req, res) {
+            repo.getSockets(function (err, data) {
                 if (err) {
                     res.send(400, err);
                 } else {
@@ -15,11 +15,11 @@
             });
         });
 
-        app.get("/hubs/:name", function (req, res) {
+        app.get("/sockets/:name", function (req, res) {
             
             var name = req.params.name;
             
-            repo.getHub(name, function (err, data) {
+            repo.getSocket(name, function (err, data) {
                 if (err) {
                     res.send(400, err);
                 } else {
@@ -29,11 +29,11 @@
             });
         });
 
-        app.get("/hubs/:name/invokes", function (req, res) {
+        app.get("/sockets/:name/messages", function (req, res) {
             
-            var hub = req.params.name;
+            var socket = req.params.name;
             
-            repo.getInvokes(hub, function (err, data) {
+            repo.getMessages(socket, function (err, data) {
                 if (err) {
                     res.send(400, err);
                 } else {
@@ -43,12 +43,12 @@
             });
         });
 		
-		app.get("/hubs/:name/invokes/:id", function (req, res) {
+		app.get("/sockets/:name/messages/:id", function (req, res) {
             
-            var hub = req.params.name;
+            var socket = req.params.name;
             var id = req.params.id;
 
-            repo.getInvoke(hub, id, function (err, data) {
+            repo.getMessage(socket, id, function (err, data) {
                 if (err) {
                     res.send(400, err);
                 } else {

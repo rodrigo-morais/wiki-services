@@ -237,7 +237,7 @@
                 code: '400',
                 name: 'Bad Request',
                 type: 'fail',
-                message: 'Error to find communications: ...'
+                message: 'Error to find communicatievents: ...'
             }]
         },
         {
@@ -274,7 +274,7 @@
                 code: '400',
                 name: 'Bad Request',
                 type: 'fail',
-                message: 'Error to find communications: ...'
+                message: 'Error to find communicatievents: ...'
             }]
         }]
     },
@@ -643,7 +643,7 @@
     },
     {
         name: 'ChatMessage',
-        type: 'hub',
+        type: 'socket',
         properties: [{
             _id: '53',
             name: 'User',
@@ -667,10 +667,10 @@
     },
     {
         name: 'Error',
-        type: 'hub',
+        type: 'socket',
         properties: [{
             _id: '57',
-            name: 'Hub',
+            name: 'Socket',
             type: 'String'
         },
         {
@@ -686,7 +686,7 @@
     },
     {
         name: 'Group',
-        type: 'hub',
+        type: 'socket',
         properties: [{
             _id: '60',
             name: 'Name',
@@ -705,7 +705,7 @@
     },
     {
         name: 'People',
-        type: 'hub',
+        type: 'socket',
         properties: [{
             _id: '63',
             name: 'Id',
@@ -723,13 +723,13 @@
         }]
     }];
 
-    seed.initialHubs = [{
+    seed.initialSockets = [{
         _id: '1',
         name: 'Chat Messages',
-        invokes: [{
+        messages: [{
             _id: 1,
             name: 'sendMessage',
-            hub: '1',
+            socket: '1',
             parameters: [{
                 _id: '1',
                 name: 'message',
@@ -740,7 +740,7 @@
                 name: 'group',
                 type: 'Group'
             }],
-            ons: [{
+            events: [{
                 _id: '1',
                 name: 'newMessage',
                 type: 'success',
@@ -756,7 +756,7 @@
         {
             _id: 2,
             name: 'joinConversation',
-            hub: '1',
+            socket: '1',
             parameters: [{
                 _id: '3',
                 name: 'group',
@@ -767,7 +767,7 @@
                 name: 'people',
                 type: 'People'
             }],
-            ons: [{
+            events: [{
                 _id: '3',
                 name: 'joined',
                 type: 'success',
@@ -783,7 +783,7 @@
         {
             _id: 3,
             name: 'createConversation',
-            hub: '1',
+            socket: '1',
             parameters: [{
                 _id: '5',
                 name: 'group',
@@ -799,7 +799,7 @@
                 name: 'guest',
                 type: 'People'
             }],
-            ons: [{
+            events: [{
                 _id: '5',
                 name: 'newConversation',
                 type: 'success',
@@ -815,8 +815,8 @@
         {
             _id: 4,
             name: 'connectChat',
-            hub: '1',
-            ons: [{
+            socket: '1',
+            events: [{
                 _id: '7',
                 name: 'onConnected',
                 type: 'success',
@@ -832,13 +832,13 @@
         {
             _id: 5,
             name: 'connectedInfo',
-            hub: '1',
+            socket: '1',
             parameters: [{
                 _id: '8',
                 name: 'people',
                 type: 'People'
             }],
-            ons: [{
+            events: [{
                 _id: '9',
                 name: 'connectedInfo',
                 type: 'success',
@@ -871,16 +871,16 @@
     {
         _id: '2',
         name: 'Communication',
-        invokes: [{
+        messages: [{
             _id: 7,
             name: 'sendCommunication',
-            hub: '2',
+            socket: '2',
             parameters: [{
                 _id: '9',
                 name: 'toIds',
                 type: 'Array(String)'
             }],
-            ons: [{
+            events: [{
                 _id: '13',
                 name: 'receiveCommunication',
                 type: 'success',
@@ -896,13 +896,13 @@
         {
             _id: 8,
             name: 'connectedCommunication',
-            hub: '2',
+            socket: '2',
             parameters: [{
                 _id: '10',
                 name: 'people',
                 type: 'People'
             }],
-            ons: [{
+            events: [{
                 _id: '15',
                 name: 'onError',
                 type: 'fail',
@@ -912,8 +912,8 @@
         {
             _id: 9,
             name: 'disconnectChat',
-            hub: '2',
-            ons: [{
+            socket: '2',
+            events: [{
                 _id: '16',
                 name: 'disconnectedInfo',
                 type: 'success',

@@ -4,7 +4,7 @@
         Menu = require('./model/menu'),
         Service = require('./model/service'),
         Model = require('./model/model'),
-        Hub = require('./model/hub');
+        Socket = require('./model/socket');
     
     var _getMenus = function (next) {
         var _menus = [];
@@ -22,7 +22,7 @@
                     
                     _menus.push({
                         id: "1",
-                        name: 'Serviços',
+                        name: 'Services',
                         type: 'services',
                         submenus: []
                     });
@@ -42,7 +42,7 @@
                     
                     _menus[0].submenus = _services;
                     
-                    next(addHubs, final, _menus);
+                    next(addSockets, final, _menus);
                 }
                 else {
                     next({ error: "Services doen't exist!" }, null);
@@ -84,47 +84,47 @@
                 }
             }
             
-            next(addModelsHubs, final, _menus);
+            next(addModelsSockets, final, _menus);
         });
     };
     
-    addHubs = function (next, final, _menus) {
-        Hub.find({}, function (err, hubs) {
+    addSockets = function (next, final, _menus) {
+        Socket.find({}, null, {sort: {name: 1}}, function (err, sockets) {
             if (err) {
                 final(err, null);
             } else {
-                if (hubs) {
+                if (sockets) {
                     _menus.push({
                         id: "3",
-                        name: 'Hubs',
-                        type: 'hubs',
+                        name: 'Sockets',
+                        type: 'sockets',
                         submenus: []
                     });
                     
-                    _.forEach(hubs, function (_hub) {
+                    _.forEach(sockets, function (_socket) {
                         var submenu = {
-                            id: _hub.id,
-                            name: _hub.name
+                            id: _socket.id,
+                            name: _socket.name
                         };
                         
                         _menus[1].submenus.push(submenu);
                     });
-                    
+                    /*
                     _menus[1].submenus = _.sortBy(_menus[1].submenus, function (_submenu) {
                         return _submenu.name;
                     });
-                    
+                    */
                     next(null, final, _menus);
                 }
                 else {
-                    next({ error: "Hubs doen't exist!" }, null);
+                    next({ error: "Sockets doen't exist!" }, null);
                 }
             }
         });
     };
     
-    addModelsHubs = function (next, final, _menus) {
-        Model.find({ type: 'hub' }, function (err, models) {
+    addModelsSockets = function (next, final, _menus) {
+        Model.find({ type: 'socket' }, function (err, models) {
             if (err) {
                 final(err, null);
             } else {

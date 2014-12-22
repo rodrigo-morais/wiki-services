@@ -1,28 +1,28 @@
-﻿describe("Integration Test: Controllers - Hubs", function () {
+﻿describe("Integration Test: Controllers - Sockets", function () {
     
     'use strict';    
     
     var request = require('supertest'),
         express = require('express'),
         app = express(),
-        hubs = require("../../../app/controllers/hubs");
+        sockets = require("../../../app/controllers/sockets");
     
     before(function (done) {
-        hubs.init(app);
+        sockets.init(app);
         done();
     });
 
-    describe("get all hubs", function () {
+    describe("get all sockets", function () {
         
         it("should return status code 200", function (done) {
             request(app)
-            .get('/hubs')
+            .get('/sockets')
             .expect(200, done);
         });
         
         it("should return four items", function (done) {
             request(app)
-            .get('/hubs')
+            .get('/sockets')
             .expect(200)
             .end(function (err, res) {
                 if (err) return done(err);
@@ -37,17 +37,17 @@
         
     });
     
-    describe("get a hub", function () {
+    describe("get a socket", function () {
 
         it("by name 'Communications Test' should return status code 200", function (done) {
             request(app)
-            .get('/hubs/Communications Test')
+            .get('/sockets/Communications Test')
             .expect(200, done);
         });
         
         it("by name 'Communications Test' should return service with id 88883", function (done) {
             request(app)
-            .get('/hubs/Communications Test')
+            .get('/sockets/Communications Test')
             .expect(200)
             .end(function (err, res) {
                 if (err) return done(err);
@@ -60,16 +60,16 @@
             });
         });
         
-        it("by name 'Communications Test' should return service with three invokes", function (done) {
+        it("by name 'Communications Test' should return service with three messages", function (done) {
             request(app)
-            .get('/hubs/Communications Test')
+            .get('/sockets/Communications Test')
             .expect(200)
             .end(function (err, res) {
                 if (err) return done(err);
                 
                 var result = JSON.parse(res.text);
                 
-                result.invokes.should.have.length(3);
+                result.messages.should.have.length(3);
                 
                 done();
             });
@@ -77,23 +77,23 @@
         
         it("with incorrect name should return status code 400", function (done) {
             request(app)
-            .get('/hubs/Incorrect')
+            .get('/sockets/Incorrect')
             .expect(400, done);
         });
         
     });
     
-    describe("get invokes of the service", function () {
+    describe("get messages of the service", function () {
         
         it("by name 'Communications Test' should return status code 200", function (done) {
             request(app)
-            .get('/hubs/Communications Test/invokes')
+            .get('/sockets/Communications Test/messages')
             .expect(200, done);
         });
         
-        it("by name 'Chat Messages Test' should return six invokes", function (done) {
+        it("by name 'Chat Messages Test' should return six messages", function (done) {
             request(app)
-            .get('/hubs/Chat Messages Test/invokes')
+            .get('/sockets/Chat Messages Test/messages')
             .expect(200)
             .end(function (err, res) {
                 if (err) return done(err);
@@ -108,7 +108,7 @@
         
         it("with incorrect name should return status code 400", function (done) {
             request(app)
-            .get('/hubs/Incorrect/invokes')
+            .get('/sockets/Incorrect/messages')
             .expect(400, done);
         });
         

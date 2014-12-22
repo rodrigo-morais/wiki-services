@@ -1,6 +1,6 @@
 ﻿var mongoose = require('mongoose'),
     Schema = require('mongoose').Schema,
-    HttpVerb = require('./httpVerb');
+    HttpVerb = require('./HttpVerb');
 
 var serviceSchema = new Schema({
     _id: String,

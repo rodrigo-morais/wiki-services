@@ -1,15 +1,15 @@
-﻿var On = function () {
+﻿var Event = function () {
     var mongoose = require('mongoose'),
         Schema = require('mongoose').Schema;
 
-    var onSchema = new Schema({
+    var eventSchema = new Schema({
         _id: Number,
         name: String,
         type: String,
         parameters: String
     });
     
-    onSchema.set('toJSON', {
+    eventSchema.set('toJSON', {
         transform: function (doc, ret, options) {
             ret.id = ret._id;
             delete ret._id;
@@ -17,9 +17,9 @@
     });
 
     return {
-        model: mongoose.model("On", onSchema),
-        schema: onSchema
+        model: mongoose.model("Event", eventSchema),
+        schema: eventSchema
     };
 }();
 
-module.exports = On;
+module.exports = Event;

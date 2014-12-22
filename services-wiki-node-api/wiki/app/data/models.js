@@ -23,8 +23,8 @@
         });
     };
     
-    var _getModelsByHubs = function (next) {
-        Model.find({ type: 'hub' }, function (err, models) {
+    var _getModelsBySockets = function (next) {
+        Model.find({ type: 'socket' }, function (err, models) {
             if (err) {
                 next(err, null);
             } else {
@@ -38,7 +38,7 @@
                     next(null, _models);
                 }
                 else {
-                    next({ error: "Models not found for hubs!" }, null);
+                    next({ error: "Models not found for sockets!" }, null);
                 }
             }
         });
@@ -59,8 +59,8 @@
         });
     };
     
-    var _getModelByHubs = function (name, next) {
-        Model.findOne({ type: 'hub', name: { $regex: new RegExp(["^",name,"$"].join(""), "i") } }, function (err, model) {
+    var _getModelBySockets = function (name, next) {
+        Model.findOne({ type: 'socket', name: { $regex: new RegExp(["^",name,"$"].join(""), "i") } }, function (err, model) {
             if (err) {
                 next(err, null);
             } else {
@@ -68,7 +68,7 @@
                     next(null, model);
                 }
                 else {
-                    next({ error: "Model '" + name + "' doesn't exist for hubs." }, null);
+                    next({ error: "Model '" + name + "' doesn't exist for sockets." }, null);
                 }
             }
         });
@@ -78,8 +78,8 @@
         model : Model,
         getModelsByServices : _getModelsByServices,
         getModelByServices : _getModelByServices,
-        getModelsByHubs : _getModelsByHubs,
-        getModelByHubs : _getModelByHubs
+        getModelsBySockets : _getModelsBySockets,
+        getModelBySockets : _getModelBySockets
     };
 }();
 

@@ -1,7 +1,7 @@
 ﻿[{
 		"_id": "88885",
         "name": "Chat Messages Test",
-        "invokes": [{
+        "messages": [{
             "_id": 1,
             "name": "sendMessage",
             "parameters": [{
@@ -12,7 +12,7 @@
                 "name": "group",
                 "type": "Group"
             }],
-            "ons": [{
+            "events": [{
                 "name": "newMessage",
                 "type": "success",
                 "parameters": "ChatMessage, Group"
@@ -34,7 +34,7 @@
                 "name": "people",
                 "type": "People"
             }],
-            "ons": [{
+            "events": [{
                 "name": "joined",
                 "type": "success",
                 "parameters": "Group, People"
@@ -60,7 +60,7 @@
                 "name": "guest",
                 "type": "People"
             }],
-            "ons": [{
+            "events": [{
                 "name": "newConversation",
                 "type": "success",
                 "parameters": "Group, People, People"
@@ -74,7 +74,7 @@
         {
             "_id": 4,
             "name": "connectChat",
-            "ons": [{
+            "events": [{
                 "name": "onConnected",
                 "type": "success",
                 "parameters": "People"
@@ -92,7 +92,7 @@
                 "name": "people",
                 "type": "People"
             }],
-            "ons": [{
+            "events": [{
                 "name": "connectedInfo",
                 "type": "success",
                 "parameters": "People"
@@ -121,14 +121,14 @@
     {
         "_id": "88883",
 		"name": "Communications Test",
-        "invokes": [{
+        "messages": [{
             "_id": 7,
             "name": "sendCommunication",
             "parameters": [{
                 "name": "toIds",
                 "type": "Array(String)"
             }],
-            "ons": [{
+            "events": [{
                 "name": "receiveCommunication",
                 "type": "success",
                 "parameters": "People, Number"
@@ -146,7 +146,7 @@
                 "name": "people",
                 "type": "People"
             }],
-            "ons": [{
+            "events": [{
                 "name": "onError",
                 "type": "fail",
                 "parameters": "Error"
@@ -155,7 +155,7 @@
         {
             "_id": 9,
             "name": "disconnectChat",
-            "ons": [{
+            "events": [{
                 "name": "disconnectedInfo",
                 "type": "success",
                 "parameters": "People, Group"
@@ -170,10 +170,10 @@
 	{
         "_id": "88882",
 		"name": "Fake 1 Test",
-        "invokes": []
+        "messages": []
     },
 	{
         "_id": "88884",
 		"name": "Fake 2 Test",
-        "invokes": []
+        "messages": []
     }]

@@ -53,31 +53,31 @@
 
     });
 
-    describe("get all models with type hub", function () {
+    describe("get all models with type socket", function () {
 
         it("should return four items", function (done) {
-            models.getModelsByHubs(function (error, models) {
+            models.getModelsBySockets(function (error, models) {
                 models.should.have.length(4);
                 done();
             });
         });
 
         it("should firts model is in correct order", function (done) {
-            models.getModelsByHubs(function (error, models) {
+            models.getModelsBySockets(function (error, models) {
                 models[0].name.should.equal('ChatMessage Test');
                 done();
             });
         });
 
         it("should last model is in correct order", function (done) {
-            models.getModelsByHubs(function (error, models) {
+            models.getModelsBySockets(function (error, models) {
                 models[3].name.should.equal('People Test');
                 done();
             });
         });
 
         it("should last model has three properties", function (done) {
-            models.getModelsByHubs(function (error, models) {
+            models.getModelsBySockets(function (error, models) {
                 models[3].properties.should.have.length(3);
                 done();
             });
@@ -85,18 +85,18 @@
 
     });
 
-    describe("get all models with type hub and name", function () {
+    describe("get all models with type socket and name", function () {
 
         it("'Group Test' should return model", function (done) {
-            models.getModelByHubs('Group Test', function (error, model) {
+            models.getModelBySockets('Group Test', function (error, model) {
                 model.name.should.equal('Group Test');
                 done();
             });
         });
 
         it("'Not Exist' shouldn't return model but a message", function (done) {
-            models.getModelByHubs('Not Exist', function (error, model) {
-                error.error.should.equal("Model 'Not Exist' doesn't exist for hubs.");
+            models.getModelBySockets('Not Exist', function (error, model) {
+                error.error.should.equal("Model 'Not Exist' doesn't exist for sockets.");
                 done();
             });
         });

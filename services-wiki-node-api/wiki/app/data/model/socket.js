@@ -1,18 +1,18 @@
 ﻿var mongoose = require('mongoose'),
         Schema = require('mongoose').Schema,
-        Invoke = require('./invoke');
+        Message = require('./Message');
 
-var hubSchema = new Schema({
+var socketSchema = new Schema({
     _id: String,
     name: String,
-    invokes: [Invoke.schema]
+    messages: [Message.schema]
 });
 
-hubSchema.set('toJSON', {
+socketSchema.set('toJSON', {
     transform: function (doc, ret, options) {
         ret.id = ret._id;
         delete ret._id;
     }
 });
 
-module.exports = mongoose.model("Hub", hubSchema);
+module.exports = mongoose.model("Socket", socketSchema);

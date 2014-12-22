@@ -31,8 +31,8 @@
             });
         });
 
-        app.get("/hubs/models", function (req, res) {
-            repo.getModelsByHubs(function (err, data) {
+        app.get("/sockets/models", function (req, res) {
+            repo.getModelsBySockets(function (err, data) {
                 if (err) {
                     res.send(400, err);
                 } else {
@@ -42,11 +42,11 @@
             });
         });
 
-        app.get("/hubs/models/:model", function (req, res) {
+        app.get("/sockets/models/:model", function (req, res) {
 
             var model = req.params.model;
 
-            repo.getModelByHubs(model, function (err, data) {
+            repo.getModelBySockets(model, function (err, data) {
                 if (err) {
                     res.send(400, err);
                 } else {

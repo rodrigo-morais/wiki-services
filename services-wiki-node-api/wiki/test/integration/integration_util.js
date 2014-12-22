@@ -7,12 +7,12 @@
         config = require('../../app/config'),
         dbUri = 'mongodb://' + config.mongo.uri + '/' + config.mongo.db,
         services = require('../../app/data/services'),
-        hubs = require('../../app/data/hubs'),
+        sockets = require('../../app/data/sockets'),
         models = require('../../app/data/models'),
         _ = require("underscore"),
         cjson = require('cjson'),
         fakeServices = cjson.load('./test/integration/fakes/services.json'),
-        fakeHubs = cjson.load('./test/integration/fakes/hubs.json'),
+        fakeSockets = cjson.load('./test/integration/fakes/sockets.json'),
         fakeModels = cjson.load('./test/integration/fakes/models.json'),
         should = require('should');
     
@@ -34,15 +34,15 @@
 
         });
         
-        _.forEach(fakeHubs, function (_fakeHub) {
+        _.forEach(fakeSockets, function (_fakeSocket) {
             
-            var hub = new hubs.model(_fakeHub);
+            var socket = new sockets.model(_fakeSocket);
             
-            hub.save(function (err, hub) {
+            socket.save(function (err, socket) {
                 if (err) {
-                    console.log('-- ---------- err hub ----------- --');
+                    console.log('-- ---------- err socket ----------- --');
                     console.log(err);
-                    console.log('-- ---------- err hub ----------- --');
+                    console.log('-- ---------- err socket ----------- --');
                 }
             });
 

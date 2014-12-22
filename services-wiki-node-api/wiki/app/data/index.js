@@ -51,19 +51,19 @@
                 }
             });
             
-            _db.collection("hubs").count(function (err, count) {
+            _db.collection("sockets").count(function (err, count) {
                 if (err) {
-                    console.log("Failed to retrieve hubs count: " + err);
+                    console.log("Failed to retrieve sockets count: " + err);
                 } else {
                     if (count === 0) {
-                        console.log("Seeding hubs the Database...");
-                        _seed.initialHubs.forEach(function (item) {
-                            _db.collection("hubs").insert(item, function (err) {
-                                if (err) console.log("Failed to insert hub into database");
+                        console.log("Seeding sockets the Database...");
+                        _seed.initialSockets.forEach(function (item) {
+                            _db.collection("sockets").insert(item, function (err) {
+                                if (err) console.log("Failed to insert socket into database");
                             });
                         });
                     } else {
-                        console.log("Hubs already seeded");
+                        console.log("Sockets already seeded");
                     }
                 }
             });

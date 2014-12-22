@@ -1,18 +1,18 @@
-﻿var Invoke = function () {
+﻿var Message = function () {
 
     var mongoose = require('mongoose'),
         Schema = require('mongoose').Schema,
-        Parameter = require('./Parameter'),
-        On = require('./On');
+		Parameter = require('./Parameter'),
+        Event = require('./Event');
 
-    var invokeSchema = new Schema({
+    var messageSchema = new Schema({
         _id: Number,
         name: String,
         parameters: [Parameter.schema],
-        ons: [On.schema]
+        events: [Event.schema]
     });
     
-    invokeSchema.set('toJSON', {
+    messageSchema.set('toJSON', {
         transform: function (doc, ret, options) {
             ret.id = ret._id;
             delete ret._id;
@@ -20,9 +20,9 @@
     });
 
     return {
-        model: mongoose.model("Invoke", invokeSchema),
-        schema: invokeSchema
+        model: mongoose.model("Message", messageSchema),
+        schema: messageSchema
     };
 }();
 
-module.exports = Invoke;
+module.exports = Message;
