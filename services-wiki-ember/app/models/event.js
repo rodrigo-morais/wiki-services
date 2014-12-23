@@ -1,10 +1,10 @@
 ﻿import DS from "ember-data";
 
-var On = DS.Model.extend({
+var Event = DS.Model.extend({
     name: DS.attr('string'),
     type: DS.attr('string'),
     parameters: DS.attr('string'),
-    invoke: DS.belongsTo('invoke')
+    message: DS.belongsTo('message')
 });
 
-export default On;
+export default Event;

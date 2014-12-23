@@ -1,10 +1,10 @@
 ﻿import DS from "ember-data";
 
-var InvokeParameter = DS.Model.extend({
+var MessageParameter = DS.Model.extend({
     name: DS.attr('string'),
     type: DS.attr('string'),
     'default': DS.attr('string'),
-    invoke: DS.belongsTo('invoke')
+    message: DS.belongsTo('message')
 });
 
-export default InvokeParameter;
+export default MessageParameter;

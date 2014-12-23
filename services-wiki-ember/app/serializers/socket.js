@@ -1,13 +1,13 @@
 ﻿import DS from "ember-data";
 
-var HubSerializer = DS.RESTSerializer.extend(DS.EmbeddedRecordsMixin, {
+var SocketSerializer = DS.RESTSerializer.extend(DS.EmbeddedRecordsMixin, {
     attrs: {
         invokes: { embedded: 'always' }
     },
     extractSingle: function (store, type, payload, id) {
-        payload = { "hub": payload };
+        payload = { "socket": payload };
         return this._super(store, type, payload, id);
     }
 });
 
-export default HubSerializer;
+export default SocketSerializer;

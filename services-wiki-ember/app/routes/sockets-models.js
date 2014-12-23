@@ -1,8 +1,8 @@
 ﻿import Ember from 'ember';
 
-var HubsModelsRoute = Ember.Route.extend({
+var SocketsModelsRoute = Ember.Route.extend({
     model: function (params) {
-        return this.store.find('model', 'hubs-' + params.model_id);
+        return this.store.find('model', 'sockets-' + params.model_id);
     },
     serialize: function (model) {
         return {
@@ -11,4 +11,4 @@ var HubsModelsRoute = Ember.Route.extend({
     }
 });
 
-export default HubsModelsRoute;
+export default SocketsModelsRoute;
