@@ -37,8 +37,8 @@ test("verify message contains two events", function(){
     });
 });
 
-test("verify parameters exist in invoke", function(){
-    this.subject().model({'hub_id': 'Communication', 'invoke_id': 7}).then(function(result){
+test("verify parameters exist in message", function(){
+    this.subject().model({'socket_id': 'Communication', 'message_id': 7}).then(function(result){
         ok(result['message'].parameters.length > 0);
     });
 });

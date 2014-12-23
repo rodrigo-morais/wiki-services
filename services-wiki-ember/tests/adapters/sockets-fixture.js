@@ -214,11 +214,11 @@ var socketsStore = (function(){
             return new Ember.RSVP.Promise(function(resolve){
                 var object = JSON.parse('{"' + type + '": {}}'),
                     fixtures = _fixture, data;
-
+                
                 data = fixtures.filter(function(socket){
                     return socket.name === params;
                 });
-
+                
                 object[type] = data[0];
                 resolve(object);
             });

@@ -49,8 +49,8 @@ var modelsStore = (function(){
                 var object = JSON.parse('{"' + type + '": {}}'),
                     fixtures = _fixture, data;
 
-                data = fixtures.filter(function(serviceModel){
-                    return serviceModel.name === params;
+                data = fixtures.filter(function(Model){
+                    return Model.name === params.split('-')[1];
                 });
 
                 object[type] = data[0];
