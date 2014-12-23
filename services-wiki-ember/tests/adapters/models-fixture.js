@@ -4,7 +4,7 @@ var modelsStore = (function(){
     var _fixture = [
         {
             "name": "ChatMessage",
-            "type": "hub",
+            "type": "socket",
             "properties": [
               {
                   "name": "User",

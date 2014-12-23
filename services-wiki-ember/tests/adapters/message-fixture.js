@@ -1,9 +1,9 @@
 ﻿import Ember from "ember";
 
-var invokeStore = (function(){
+var messageStore = (function(){
     var _fixture = {
         "name": "sendCommunication",
-        "ons": [
+        "events": [
           {
               "name": "receiveCommunication",
               "type": "success",
@@ -31,8 +31,8 @@ var invokeStore = (function(){
                     fixtures = [], data;
                 
                 fixtures.push(_fixture);
-                data = fixtures.filter(function(invoke){
-                    return invoke.id.toString() === params.split('-')[1];
+                data = fixtures.filter(function(message){
+                    return message.id.toString() === params.split('-')[1];
                 });
 
                 object[type] = data[0];
@@ -46,4 +46,4 @@ var invokeStore = (function(){
     };
 })();
 
-export default invokeStore;
+export default messageStore;

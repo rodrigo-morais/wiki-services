@@ -1,13 +1,13 @@
 ﻿import Ember from "ember";
 
-var hubsStore = (function(){
+var socketsStore = (function(){
     var _fixture = [
         {
             "name": "Chat Messages",
-            "invokes": [
+            "messages": [
             {
                 "name": "sendMessage",
-                "ons": [
+                "events": [
                     {
                         "name": "newMessage",
                         "type": "success",
@@ -33,7 +33,7 @@ var hubsStore = (function(){
             },
             {
                 "name": "joinConversation",
-                "ons": [
+                "events": [
                     {
                         "name": "joined",
                         "type": "success",
@@ -59,7 +59,7 @@ var hubsStore = (function(){
             },
             {
                 "name": "createConversation",
-                "ons": [
+                "events": [
                     {
                         "name": "newConversation",
                         "type": "success",
@@ -89,7 +89,7 @@ var hubsStore = (function(){
             },
             {
                 "name": "connectChat",
-                "ons": [
+                "events": [
                     {
                         "name": "onConnected",
                         "type": "success",
@@ -106,7 +106,7 @@ var hubsStore = (function(){
             },
             {
                 "name": "connectedInfo",
-                "ons": [
+                "events": [
                     {
                         "name": "connectedInfo",
                         "type": "success",
@@ -138,7 +138,7 @@ var hubsStore = (function(){
             },
             {
                 "name": "disconnectChat",
-                "ons": [],
+                "events": [],
                 "parameters": [],
                 "id": 6
             }
@@ -147,10 +147,10 @@ var hubsStore = (function(){
         },
         {
             "name": "Communication",
-            "invokes": [
+            "messages": [
             {
                 "name": "sendCommunication",
-                "ons": [
+                "events": [
                     {
                         "name": "receiveCommunication",
                         "type": "success",
@@ -172,7 +172,7 @@ var hubsStore = (function(){
             },
             {
                 "name": "connectedCommunication",
-                "ons": [
+                "events": [
                     {
                         "name": "onError",
                         "type": "fail",
@@ -189,7 +189,7 @@ var hubsStore = (function(){
             },
             {
                 "name": "disconnectChat",
-                "ons": [
+                "events": [
                     {
                         "name": "disconnectedInfo",
                         "type": "success",
@@ -215,8 +215,8 @@ var hubsStore = (function(){
                 var object = JSON.parse('{"' + type + '": {}}'),
                     fixtures = _fixture, data;
 
-                data = fixtures.filter(function(hub){
-                    return hub.name === params;
+                data = fixtures.filter(function(socket){
+                    return socket.name === params;
                 });
 
                 object[type] = data[0];
@@ -230,4 +230,4 @@ var hubsStore = (function(){
     };
 })();
 
-export default hubsStore;
+export default socketsStore;
