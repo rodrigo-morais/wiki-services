@@ -241,7 +241,7 @@ i {
     background-color: ghostwhite;
     border: 1px solid silver;
     padding: 0px;
-    margin: 0px; 
+    margin: 0px 0 2%; 
 }
 
 .serviceModel-body .json-brace,

@@ -34,8 +34,7 @@ var _prettyPrint = function(obj) {
     return jsonHTML;
 };
 
-var JsonPrettyView = Ember.View.extend({
-    templateName: "jsonPretty",
+var JsonPrettyComponent = Ember.Component.extend({
     pretty: function () {
         var jsonObj = JSON.parse(this.get('jsonObj'));
         
@@ -43,4 +42,4 @@ var JsonPrettyView = Ember.View.extend({
     }.property('jsonObj')
 });
 
-export default JsonPrettyView;
+export default JsonPrettyComponent;
