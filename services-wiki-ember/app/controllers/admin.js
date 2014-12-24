@@ -1,7 +1,7 @@
 ﻿import Ember from 'ember';
 
 var AdminController = Ember.ObjectController.extend({
-    logged: false
+    logged: true
 });
 
 export default AdminController;
