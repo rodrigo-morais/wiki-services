@@ -1,5 +1,5 @@
 ﻿{{#if view.hasChilds }}
-	{{view 'link' target=view.target text=view.name}}
+	{{menu-aggregator target=view.target text=view.name}}
 	<ul class='list-unstyled collapse' {{bind-attr id='view.target'}} >
         {{#each view.submenus}}
           {{view 'item' model=this type_parent=view.uri}}

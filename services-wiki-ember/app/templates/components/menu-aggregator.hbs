@@ -1,0 +1,9 @@
+<a href="#" data-toggle="collapse" {{bind-attr data-target=dataTarget}} class='nav-header-link' {{action 'toggleBody'}}>
+    <h4>
+        {{#if isOpen}}
+            {{text}} <i class="glyphicon glyphicon-chevron-down"></i>
+        {{else}}
+            {{text}} <i class="glyphicon glyphicon-chevron-right"></i>
+        {{/if}}
+    </h4>
+</a>

@@ -1,7 +1,7 @@
 ﻿<ul class="list-unstyled">
 	<li class="nav-header">
     {{#each controller}}
-      {{view 'link' target=type text=name}}
+      {{menu-aggregator target=type text=name}}
     <ul class='list-unstyled collapse' {{bind-attr id='type'}} >
         {{#if controllers.admin.logged}}
         <li>
