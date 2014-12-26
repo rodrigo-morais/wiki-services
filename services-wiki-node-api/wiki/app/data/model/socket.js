@@ -1,6 +1,6 @@
 ﻿var mongoose = require('mongoose'),
         Schema = require('mongoose').Schema,
-        Message = require('./Message');
+        Message = require('./message');
 
 var socketSchema = new Schema({
     _id: String,

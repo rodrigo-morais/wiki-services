@@ -2,8 +2,8 @@
 
     var mongoose = require('mongoose'),
         Schema = require('mongoose').Schema,
-		Parameter = require('./Parameter'),
-        Event = require('./Event');
+		Parameter = require('./parameter'),
+        Event = require('./event');
 
     var messageSchema = new Schema({
         _id: Number,

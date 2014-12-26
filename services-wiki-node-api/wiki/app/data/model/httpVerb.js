@@ -2,8 +2,8 @@
 
     var mongoose = require('mongoose'),
         Schema = require('mongoose').Schema,
-        Parameter = require('./Parameter'),
-        Return = require('./Return');
+        Parameter = require('./parameter'),
+        Return = require('./return');
 
     var httpVerbSchema = new Schema({
         _id: Number,

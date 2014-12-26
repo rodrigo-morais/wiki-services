@@ -1,6 +1,6 @@
 ﻿var mongoose = require('mongoose'),
     Schema = require('mongoose').Schema,
-    SubMenu = require('./SubMenu');
+    SubMenu = require('./subMenu');
 
 var menuSchema = new Schema({
     _id: Number,
