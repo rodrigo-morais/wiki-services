@@ -5,13 +5,10 @@ var MenuAggregatorView = Ember.Component.extend({
     dataTarget: function () {
         return '#' + this.get('target');
     }.property('target'),
-    iconRight: 'glyphicon glyphicon-chevron-right',
-    iconDown: 'glyphicon glyphicon-chevron-right',
     isOpen: false,
     actions: {
-        toggleBody: function (event) {
+        toggleBody: function () {
             this.toggleProperty('isOpen');
-            console.log(this.isOpen);
         }
     }
 });
