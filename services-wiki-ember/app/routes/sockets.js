@@ -10,7 +10,7 @@ var HubsRoute = Ember.Route.extend({
         };
     },
     actions: {
-        goToInvoke: function (message) {
+        goToMessage: function (message) {
             this.transitionTo('message', message);
         }
     }

@@ -2,7 +2,7 @@
 
 var SocketSerializer = DS.RESTSerializer.extend(DS.EmbeddedRecordsMixin, {
     attrs: {
-        invokes: { embedded: 'always' }
+        messages: { embedded: 'always' }
     },
     extractSingle: function (store, type, payload, id) {
         payload = { "socket": payload };

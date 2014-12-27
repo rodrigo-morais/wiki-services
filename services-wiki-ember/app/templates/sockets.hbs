@@ -1,4 +1,4 @@
-﻿{{view 'breadcrumb' paths='Hubs' page=name model=this}}
+﻿{{view 'breadcrumb' paths='Sockets' page=name model=this}}
 
 {{#if controllers.admin.logged}}
   {{task-bar}}
@@ -18,13 +18,13 @@
       <thead>
         <tr>
           <th>
-            Invoke
+            Message
           </th>
         </tr>
         <thead>
           <tbody>
-            {{#each invokes}}
-              <tr {{ action 'goToInvoke' this }}>
+            {{#each messages}}
+              <tr {{ action 'goToMessage' this }}>
                 <td>
                   {{name}}
                 </td>
@@ -32,7 +32,7 @@
             {{else}}
               <tr>
                 <td colspan='2' class='message-table'>
-                  Não existem invokes cadastrados
+                  Don't exist messages registered
                 </td>
               </tr>
             {{/each}}

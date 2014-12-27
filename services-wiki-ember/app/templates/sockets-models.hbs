@@ -1,4 +1,4 @@
-﻿{{view 'breadcrumb' paths='Hub,Modelo' page=name model=this}}
+﻿{{view 'breadcrumb' paths='Socket,Model' page=name model=this}}
 
 {{#if controllers.admin.logged}}
   {{task-bar}}
@@ -11,17 +11,17 @@
 <div class='row serviceModel-body scrollable'>
 	<div class='panel panel-default col-md-10 col-md-offset-1'>
 		<div  class='panel-heading'>
-			<span>Propriedades:</span>
+			<span>Properties:</span>
 		</div>
 		<div class='panel-body'>
 			<table class='table table-striped table-condensed table-hover'>
 				<thead>
 					<tr>
 						<th>
-							Nome
+							Name
 						</th>
 						<th>
-							Tipo
+							Type
 						</th>
 					</tr>
 				<thead>
@@ -38,7 +38,7 @@
 					{{else}}
 						<tr>
 							<td colspan='2' class='message-table'>
-								Não existem propriedades cadastradas
+								Don't exist properties registered
 							</td>
 						</tr>
 					{{/each}}
