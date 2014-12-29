@@ -1,7 +1,6 @@
-﻿import Ember from 'ember';
+import Ember from 'ember';
 
-var ItemView = Ember.View.extend({
-    templateName: "item",
+var MenuItemComponent = Ember.Component.extend({
     tagName: 'li',
     model: {},
     type_parent: '',
@@ -42,4 +41,4 @@ var ItemView = Ember.View.extend({
     }.property('submenus')
 });
 
-export default ItemView;
+export default MenuItemComponent;

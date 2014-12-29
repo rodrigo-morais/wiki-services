@@ -113,8 +113,7 @@ i {
    padding:8px;
 }
 
-#hubs > li:last-of-type,
-#services > li:last-of-type
+#hubs > li:last-of-type
 {
     margin-top: -9%;
 }

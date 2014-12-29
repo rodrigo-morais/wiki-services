@@ -1,0 +1,16 @@
+{{#if hasChilds }}
+    {{menu-aggregator target=target text=name}}
+    <ul class='list-unstyled collapse' {{bind-attr id='target'}} >
+        {{#each submenus}}
+          {{menu-item model=this type_parent=uri}}
+        {{/each}}
+      </ul>
+{{else}}
+    {{#if hasTypeParent}}
+        {{#link-to type_parent name}}<i class="fa fa-cog"></i>{{ name }}{{/link-to}}
+    {{else}}
+        <a {{bind-attr href=path}}>
+            <i class="fa fa-cog"></i> {{ name }}
+        </a>
+    {{/if}}
+{{/if}}
