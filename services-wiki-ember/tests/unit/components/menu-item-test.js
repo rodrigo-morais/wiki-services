@@ -1,7 +1,12 @@
 import Ember from "ember";
 import { test, moduleForComponent } from 'ember-qunit';
 
-moduleForComponent('menu-item');
+moduleForComponent('menu-item', {
+    needs: [
+        'component:menu-aggregator',
+        'template:components/menu-aggregator'
+    ]
+});
 
 test('verify if tag name is LI', function(){
     var component = this.subject();
@@ -338,4 +343,29 @@ test('verify if hasChilds property return false when menu item not contains subm
     });
 
     ok(!component.get('hasChilds'));
+});
+
+test('verify if template of menu item without submenus not show UL', function(){
+    var component = this.subject(),
+        ul;
+
+    Ember.run(function(){
+        component
+            .set(
+                'model',
+                {
+                    name: 'Item',
+                    type: 'model'
+                }
+            )
+            .set(
+                'type_parent',
+                'service'
+            );
+    });
+    
+
+    ul = Ember.$(this.$().context).find('ul.list-unstyled');
+
+    equal(ul.length, 0);
 });
