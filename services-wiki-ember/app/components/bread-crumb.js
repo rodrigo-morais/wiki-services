@@ -45,7 +45,7 @@ var BreadcrumbComponent = Ember.Component.extend({
     path: function () {
         var model = this.get('model'),
             self = this;
-        debugger;
+        
         if(Array.isArray(this.get('paths'))){
             return this.get('paths');
         }
