@@ -45,11 +45,15 @@ var BreadcrumbComponent = Ember.Component.extend({
     path: function () {
         var model = this.get('model'),
             self = this;
-        
+        debugger;
         if(Array.isArray(this.get('paths'))){
             return this.get('paths');
         }
         else{
+            if(this.get('paths').indexOf('.') === -1){
+                return this.get('paths').split(',');
+            }
+
             _createPath(model, this.get('paths').split(','), self).then(function(result){
                 result.self.set('paths', result.paths);
                 return result.paths;

@@ -9,8 +9,8 @@ test('verify if tag name is DIV', function(){
     Ember.run(function(){
         component
             .set(
-                'model',
-                {}
+                'paths',
+                'Services, Conversation'
             );
     });
 
@@ -24,7 +24,7 @@ test('verify if path contains two items', function(){
         component
             .set(
                 'paths',
-                'Services, Conversation'
+                'Services,Conversation'
             );
     });
 
@@ -38,11 +38,11 @@ test('verify if first item of path property is "Service"', function(){
         component
             .set(
                 'paths',
-                'Services, Conversation'
+                'Services,Conversation'
             );
     });
 
-    equal(component.get('path')[0], 'Service');
+    equal(component.get('path')[0], 'Services');
 });
 
 test('verify if second item of path property is "Conversation"', function(){
@@ -52,7 +52,7 @@ test('verify if second item of path property is "Conversation"', function(){
         component
             .set(
                 'paths',
-                'Services, Conversation'
+                'Services,Conversation'
             );
     });
 
@@ -72,7 +72,7 @@ test('verify if path with model data contains two items', function(){
             )
             .set(
                 'paths',
-                'Services, service.name'
+                'Services,service.name'
             );
     });
 
@@ -92,11 +92,11 @@ test('verify if first item of path property is "Service"', function(){
             )
             .set(
                 'paths',
-                'Services, service.name'
+                'Services,service.name'
             );
     });
 
-    equal(component.get('path')[0], 'Service');
+    equal(component.get('path')[0], 'Services');
 });
 
 test('verify if second item of path property is "Conversation"', function(){
@@ -112,7 +112,7 @@ test('verify if second item of path property is "Conversation"', function(){
             )
             .set(
                 'paths',
-                'Services, service.name'
+                'Services,service.name'
             );
     });
 
