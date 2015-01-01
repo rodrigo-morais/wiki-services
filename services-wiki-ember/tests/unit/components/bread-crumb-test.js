@@ -1,5 +1,6 @@
 import Ember from "ember";
 import { test, moduleForComponent } from 'ember-qunit';
+import HttpVerbModel from "services-wiki-ember/models/http-verb";
 
 moduleForComponent('bread-crumb');
 
@@ -53,66 +54,6 @@ test('verify if second item of path property is "Conversation"', function(){
             .set(
                 'paths',
                 'Services,Conversation'
-            );
-    });
-
-    equal(component.get('path')[1], 'Conversation');
-});
-
-test('verify if path with model data contains two items', function(){
-    var component = this.subject();
-
-    Ember.run(function(){
-        component
-            .set(
-                'model',
-                {
-                    name: 'Conversation'
-                }    
-            )
-            .set(
-                'paths',
-                'Services,service.name'
-            );
-    });
-
-    equal(component.get('path').length, 2);
-});
-
-test('verify if first item of path property is "Service"', function(){
-    var component = this.subject();
-
-    Ember.run(function(){
-        component
-            .set(
-                'model',
-                {
-                    name: 'Conversation'
-                }    
-            )
-            .set(
-                'paths',
-                'Services,service.name'
-            );
-    });
-
-    equal(component.get('path')[0], 'Services');
-});
-
-test('verify if second item of path property is "Conversation"', function(){
-    var component = this.subject();
-
-    Ember.run(function(){
-        component
-            .set(
-                'model',
-                {
-                    name: 'Conversation'
-                }    
-            )
-            .set(
-                'paths',
-                'Services,service.name'
             );
     });
 
