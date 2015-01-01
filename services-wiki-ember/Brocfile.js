@@ -1,7 +1,16 @@
 /// <reference path="bower_components/bootstrap/dist/js/bootstrap.js" />
 /* global require, module */
 
-var EmberApp = require('ember-cli/lib/broccoli/ember-app');
+var EmberApp = require('ember-cli/lib/broccoli/ember-app'),
+    pickFiles = require('broccoli-static-compiler'),
+    mergeTrees = require('broccoli-merge-trees'),
+    sinon = pickFiles('bower_components/sinon', {
+        srcDir: '/',
+        files: ['index.js'],
+        destDir: '/assets/sinon'
+    });
+
+
 
 var app = new EmberApp({
     es3Safe: false
@@ -35,4 +44,5 @@ app.import('bower_components/bootstrap/fonts/glyphicons-halflings-regular.woff',
     destDir: 'fonts'
 });
 
-module.exports = app.toTree();
+//module.exports = app.toTree();
+module.exports = mergeTrees([app.toTree(), sinon]);
