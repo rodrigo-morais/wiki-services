@@ -8,12 +8,6 @@
                 next(error, null);
             } else {
                 
-                /*var _sockets = [];
-
-                _sockets = _.sortBy(sockets, function (_socket) {
-                    return _sockets.name;
-                });*/
-                
                 next(null, sockets);
             }
         });

@@ -70,16 +70,34 @@
             });
         });
 
-        it("by name 'Fake 1 Test' shouldn't return verbs HTTP", function (done) {
+        it("by name 'Fake 1 Test' shouldn't return messages", function (done) {
             sockets.getMessages('Fake 1 Test', function (error, messages) {
                 messages.should.have.length(0);
                 done();
             });
         });
 
-        it("by name 'Not Exist' shouldn't return verbs HTTP but a error message", function (done) {
+        it("by name 'Not Exist' shouldn't return messages but a error message", function (done) {
             sockets.getMessages('Not Exist', function (error, messages) {
                 error.error.should.equal("Socket 'Not Exist' doesn't exist");
+                done();
+            });
+        });
+
+    });
+
+    describe("get a message", function () {
+        
+        it("of the socket by name 'Chat Messages Test' and verb by id 2 should return a message with id 2", function (done) {
+            sockets.getMessage('Chat Messages Test', '2', function (error, message) {
+                message.id.should.equal('2');
+                done();
+            });
+        });
+
+        it("of the service by name 'Chat Messages Test' and message with message id shouldn't return a message object but a error message", function (done) {
+            sockets.getMessage('Chat Messages Test', '101', function (error, httpVerb) {
+                error.error.should.equal("Socket 'Chat Messages Test' doesn't have message '101'");
                 done();
             });
         });

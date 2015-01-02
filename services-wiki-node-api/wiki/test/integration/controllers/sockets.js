@@ -114,4 +114,35 @@
         
     });
 
+    describe("get Message", function () {
+        
+        it("of the socket by name 'Communications Test' and message with id 7 should return status code 200", function (done) {
+            request(app)
+            .get('/sockets/Communications Test/messages/7')
+            .expect(200, done);
+        });
+        
+        it("of the socket by name 'Communications Test' and message with id 7 should return message with id 7", function (done) {
+            request(app)
+            .get('/sockets/Communications Test/messages/7')
+            .expect(200)
+            .end(function (err, res) {
+                if (err) return done(err);
+                
+                var result = JSON.parse(res.text);
+                
+                result.id.should.equal(7);
+                
+                done();
+            });
+        });
+
+        it("of the socket by name 'Communications Test' and message with id incorrect should return status code 400", function (done) {
+            request(app)
+            .get('/sockets/Communications Test/messages/9999')
+            .expect(400, done);
+        });
+
+    });
+
 });
