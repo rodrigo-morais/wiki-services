@@ -225,9 +225,10 @@ i {
 {
     position: relative;
     font-size: 1em;
-    height: 68%;
-    max-height: 68%;
+    height: 83%;
+    max-height: 81%;
     overflow-y: auto;
+    overflow-x: hidden;
 }
 
 .serviceModel-body .panel-body
